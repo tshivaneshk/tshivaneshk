@@ -6,20 +6,6 @@
 
 <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/signal.svg" alt="Station signal wave divider" width="100%" />
 
-<br/>
-
-<a href="#console"><img src="./assets/airlock-1.svg" alt="Airlock to terminal console" width="22%" /></a>
-&nbsp;
-<a href="#hangar"><img src="./assets/airlock-2.svg" alt="Airlock to hangar bay" width="22%" /></a>
-&nbsp;
-<a href="#observatory"><img src="./assets/airlock-3.svg" alt="Airlock to observatory telemetry" width="22%" /></a>
-&nbsp;
-<a href="#contact"><img src="./assets/airlock-4.svg" alt="Airlock to contact links" width="22%" /></a>
-
-<br/><br/>
-
-<img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/signal.svg" alt="Station signal wave divider" width="100%" />
-
 </div>
 
 <a id="console"></a>
