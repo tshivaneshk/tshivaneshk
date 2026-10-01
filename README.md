@@ -48,15 +48,15 @@
 
 <div align="center">
 
-<a href="https://github.com/tshivaneshk/Spyware-Project"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-android-forensics.svg" alt="Android Security and Forensics platform vessel" width="48%" /></a>
+<a href="https://github.com/tshivaneshk/Spyware-Project"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-android-forensics.svg?v=cb003c9" alt="Android Security and Forensics platform vessel" width="48%" /></a>
 &nbsp;
-<a href="https://github.com/tshivaneshk/Wolfsniff"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-wolfsniff.svg" alt="Wolfsniff network intrusion detection system vessel" width="48%" /></a>
+<a href="https://github.com/tshivaneshk/Wolfsniff"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-wolfsniff.svg?v=cb003c9" alt="Wolfsniff network intrusion detection system vessel" width="48%" /></a>
 
 <br/><br/>
 
 <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/signal.svg" alt="Station signal wave divider" width="100%" />
 
-<img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/cargo-orbit.svg" alt="Orbital cargo core with three concentric rotating technology rings" width="100%" />
+<img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/cargo-orbit.svg?v=cb003c9" alt="Orbital cargo core with three concentric rotating technology rings" width="100%" />
 
 <br/>
 
