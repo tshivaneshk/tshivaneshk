@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 130" width="100%" height="100%">
+  <defs>
+    <!-- Twinkle Animations for Stars -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes floatSpace {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    @keyframes rocketDrift {
+      0% { transform: translate(0px, 0px) rotate(-15deg); }
+      50% { transform: translate(12px, -8px) rotate(-10deg); }
+      100% { transform: translate(0px, 0px) rotate(-15deg); }
+    }
+
+    @keyframes planetOrbit {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-5px) rotate(6deg); }
+    }
+
+    .astronaut-float { animation: floatSpace 4.5s ease-in-out infinite; transform-origin: center; }
+    .rocket-float { animation: rocketDrift 5s ease-in-out infinite; transform-origin: center; }
+    .planet-float { animation: planetOrbit 6s ease-in-out infinite; transform-origin: center; }
+    
+    .star-1 { animation: twinkle 2.2s infinite ease-in-out; }
+    .star-2 { animation: twinkle 3.1s infinite ease-in-out 0.8s; }
+    .star-3 { animation: twinkle 2.6s infinite ease-in-out 1.5s; }
+    .star-4 { animation: twinkle 1.9s infinite ease-in-out 0.4s; }
+  </style>
+
+  <!-- Deep transparent space with drifting celestial objects -->
+  <g class="star-1"><circle cx="45" cy="25" r="2.5" fill="#ffffff" filter="url(#glow)"/></g>
+  <g class="star-2"><circle cx="180" cy="85" r="2" fill="#ffd166"/></g>
+  <g class="star-3"><circle cx="720" cy="30" r="3" fill="#00f5d4" filter="url(#glow)"/></g>
+  <g class="star-4"><circle cx="840" cy="70" r="2" fill="#ff70a6"/></g>
+  <g class="star-2"><circle cx="340" cy="15" r="1.5" fill="#ffffff"/></g>
+  <g class="star-1"><circle cx="610" cy="95" r="2" fill="#a0c4ff"/></g>
+
+  <!-- Left Floating Saturn-like Planet -->
+  <g class="planet-float" transform="translate(60, 45)">
+    <circle cx="25" cy="25" r="20" fill="#7209b7"/>
+    <ellipse cx="25" cy="25" rx="34" ry="7" fill="none" stroke="#f72585" stroke-width="3" transform="rotate(-25 25 25)"/>
+    <circle cx="20" cy="18" r="4" fill="#ffffff" opacity="0.3"/>
+  </g>
+
+  <!-- Center Floating Astronaut -->
+  <g class="astronaut-float" transform="translate(420, 20)">
+    <!-- Cute Floating Astronaut -->
+    <ellipse cx="30" cy="45" rx="18" ry="24" fill="#e2e8f0"/>
+    <!-- Backpack -->
+    <rect x="10" y="28" width="8" height="30" rx="4" fill="#64748b"/>
+    <!-- Head Helmet -->
+    <circle cx="30" cy="22" r="18" fill="#f8fafc"/>
+    <ellipse cx="32" cy="22" rx="12" ry="9" fill="#0f172a" stroke="#00f5d4" stroke-width="2"/>
+    <ellipse cx="35" cy="19" rx="4" ry="2.5" fill="#ffffff" opacity="0.7"/>
+    <!-- Little Waving Hand -->
+    <circle cx="50" cy="36" r="6" fill="#e2e8f0"/>
+    <circle cx="12" cy="45" r="6" fill="#e2e8f0"/>
+    <!-- Cute boots -->
+    <ellipse cx="22" cy="72" rx="7" ry="5" fill="#38bdf8"/>
+    <ellipse cx="38" cy="72" rx="7" ry="5" fill="#38bdf8"/>
+  </g>
+
+  <!-- Right Floating Rocket -->
+  <g class="rocket-float" transform="translate(760, 25)">
+    <!-- Rocket Flame -->
+    <polygon points="10,48 5,60 15,55 20,62 18,48" fill="#ff70a6"/>
+    <polygon points="11,48 8,55 14,52 17,56 16,48" fill="#ffd166"/>
+    <!-- Rocket Body -->
+    <path d="M 20,10 C 35,25 35,45 28,48 L 5,48 C -2,45 -2,25 13,10 Z" fill="#f8fafc" stroke="#f43f5e" stroke-width="2"/>
+    <!-- Window -->
+    <circle cx="16" cy="30" r="6" fill="#00bbf9"/>
+    <!-- Wings -->
+    <polygon points="2,38 -8,48 2,48" fill="#f43f5e"/>
+    <polygon points="28,38 38,48 28,48" fill="#f43f5e"/>
+  </g>
+</svg>
