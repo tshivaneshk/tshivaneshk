@@ -39,26 +39,43 @@
       .core-inner { fill: #00B89F; }
     }
 
-    /* Single composite transform per ring: hardware accelerated and zero CPU lag */
-    @keyframes orbit1 {
+    /* Rings rotation */
+    @keyframes orbitClockwise {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    @keyframes orbit2 {
+    @keyframes orbitCounterClockwise {
       0% { transform: rotate(360deg); }
       100% { transform: rotate(0deg); }
     }
-    @keyframes orbit3 {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+
+    .orbit-ring1 { animation: orbitClockwise 32s linear infinite; transform-origin: 600px 280px; will-change: transform; }
+    .orbit-ring2 { animation: orbitCounterClockwise 44s linear infinite; transform-origin: 600px 280px; will-change: transform; }
+    .orbit-ring3 { animation: orbitClockwise 56s linear infinite; transform-origin: 600px 280px; will-change: transform; }
+
+    /* Counter-rotations to keep orbiting nodes straight and upright */
+    .keep-upright1 {
+      animation: orbitCounterClockwise 32s linear infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform;
+    }
+    .keep-upright2 {
+      animation: orbitClockwise 44s linear infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform;
+    }
+    .keep-upright3 {
+      animation: orbitCounterClockwise 56s linear infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+      will-change: transform;
     }
 
-    .orbit-ring1 { animation: orbit1 32s linear infinite; transform-origin: 600px 280px; will-change: transform; }
-    .orbit-ring2 { animation: orbit2 44s linear infinite; transform-origin: 600px 280px; will-change: transform; }
-    .orbit-ring3 { animation: orbit3 56s linear infinite; transform-origin: 600px 280px; will-change: transform; }
-
     @media (prefers-reduced-motion: reduce) {
-      .orbit-ring1, .orbit-ring2, .orbit-ring3 {
+      .orbit-ring1, .orbit-ring2, .orbit-ring3,
+      .keep-upright1, .keep-upright2, .keep-upright3 {
         animation: none !important;
       }
     }
@@ -86,19 +103,19 @@
 
   <!-- ================= RING 1 (Inner, r=105): 4 Core Languages ================= -->
   <g class="orbit-ring1">
-    <g transform="translate(600, 175)">
+    <g transform="translate(600, 175)" class="keep-upright1">
       <rect x="-38" y="-14" width="76" height="28" rx="6" class="node-box" stroke="#00F5D4"/>
       <text x="0" y="1" class="font-mono node-text">Python</text>
     </g>
-    <g transform="translate(705, 280)">
+    <g transform="translate(705, 280)" class="keep-upright1">
       <rect x="-36" y="-14" width="72" height="28" rx="6" class="node-box" stroke="#8B5CF6"/>
       <text x="0" y="1" class="font-mono node-text">Kotlin</text>
     </g>
-    <g transform="translate(600, 385)">
+    <g transform="translate(600, 385)" class="keep-upright1">
       <rect x="-26" y="-14" width="52" height="28" rx="6" class="node-box" stroke="#00F5D4"/>
       <text x="0" y="1" class="font-mono node-text">C</text>
     </g>
-    <g transform="translate(495, 280)">
+    <g transform="translate(495, 280)" class="keep-upright1">
       <rect x="-28" y="-14" width="56" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">C++</text>
     </g>
@@ -106,23 +123,23 @@
 
   <!-- ================= RING 2 (Middle, r=165): 5 Web & Mobile ================= -->
   <g class="orbit-ring2">
-    <g transform="translate(600, 115)">
+    <g transform="translate(600, 115)" class="keep-upright2">
       <rect x="-44" y="-14" width="88" height="28" rx="6" class="node-box" stroke="#38BDF8"/>
       <text x="0" y="1" class="font-mono node-text">TypeScript</text>
     </g>
-    <g transform="translate(757, 229)">
+    <g transform="translate(757, 229)" class="keep-upright2">
       <rect x="-44" y="-14" width="88" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">JavaScript</text>
     </g>
-    <g transform="translate(697, 413)">
+    <g transform="translate(697, 413)" class="keep-upright2">
       <rect x="-32" y="-14" width="64" height="28" rx="6" class="node-box" stroke="#EF4444"/>
       <text x="0" y="1" class="font-mono node-text">HTML</text>
     </g>
-    <g transform="translate(503, 413)">
+    <g transform="translate(503, 413)" class="keep-upright2">
       <rect x="-28" y="-14" width="56" height="28" rx="6" class="node-box" stroke="#38BDF8"/>
       <text x="0" y="1" class="font-mono node-text">CSS</text>
     </g>
-    <g transform="translate(443, 229)">
+    <g transform="translate(443, 229)" class="keep-upright2">
       <rect x="-56" y="-14" width="112" height="28" rx="6" class="node-box" stroke="#10B981"/>
       <text x="0" y="1" class="font-mono node-text">Android Studio</text>
     </g>
@@ -130,27 +147,27 @@
 
   <!-- ================= RING 3 (Outer, r=225): 6 Systems & Security Tools ================= -->
   <g class="orbit-ring3">
-    <g transform="translate(600, 55)">
+    <g transform="translate(600, 55)" class="keep-upright3">
       <rect x="-34" y="-14" width="68" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">Linux</text>
     </g>
-    <g transform="translate(795, 167)">
+    <g transform="translate(795, 167)" class="keep-upright3">
       <rect x="-30" y="-14" width="60" height="28" rx="6" class="node-box" stroke="#10B981"/>
       <text x="0" y="1" class="font-mono node-text">Bash</text>
     </g>
-    <g transform="translate(795, 393)">
+    <g transform="translate(795, 393)" class="keep-upright3">
       <rect x="-26" y="-14" width="52" height="28" rx="6" class="node-box" stroke="#EF4444"/>
       <text x="0" y="1" class="font-mono node-text">Git</text>
     </g>
-    <g transform="translate(600, 505)">
+    <g transform="translate(600, 505)" class="keep-upright3">
       <rect x="-36" y="-14" width="72" height="28" rx="6" class="node-box" stroke="#E6EDF7"/>
       <text x="0" y="1" class="font-mono node-text">GitHub</text>
     </g>
-    <g transform="translate(405, 393)">
+    <g transform="translate(405, 393)" class="keep-upright3">
       <rect x="-48" y="-14" width="96" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">Scikit-learn</text>
     </g>
-    <g transform="translate(405, 167)">
+    <g transform="translate(405, 167)" class="keep-upright3">
       <rect x="-44" y="-14" width="88" height="28" rx="6" class="node-box" stroke="#00F5D4"/>
       <text x="0" y="1" class="font-mono node-text">Wireshark</text>
     </g>
