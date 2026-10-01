@@ -1,4 +1,4 @@
-name: Generate Mission Control Visualizations
+name: Generate 3D Contribution City
 
 on:
   schedule:
@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Generate 3D Contribution City and Pacman Grid
+    name: Generate 3D Contribution City
     permissions:
       contents: write
 
@@ -26,24 +26,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
 
-      - name: Generate Pacman Contribution Arcade
-        uses: abhisheknaiidu/pacman-contribution-graph@v1.0.0
-        with:
-          github_user_name: ${{ github.repository_owner }}
-
       - name: Prepare dist directory
         run: |
           mkdir -p dist
-          # Copy 3D profile outputs if generated
           if [ -d "profile-3d-contrib" ]; then
             cp -r profile-3d-contrib/* dist/
-          fi
-          # Copy pacman outputs if generated
-          if [ -f "pacman.svg" ]; then
-            cp pacman.svg dist/pacman.svg
-          fi
-          if [ -f "pacman-dark.svg" ]; then
-            cp pacman-dark.svg dist/pacman-dark.svg
           fi
 
       - name: Push artifacts to output branch
