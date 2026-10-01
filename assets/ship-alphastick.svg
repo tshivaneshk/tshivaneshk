@@ -1,83 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 280" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
   <defs>
-    <linearGradient id="shipBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="shipBg3Dark" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#111A2E"/>
       <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="shipBg3Light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DDE5F2"/>
     </linearGradient>
   </defs>
 
   <style>
     .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .ship-hull { fill: url(#shipBg3); stroke: #17233D; stroke-width: 1.5; }
-    .txt-name { fill: #FFB547; font-weight: 700; font-size: 18px; }
-    .txt-desc { fill: #7C8BA8; font-size: 12.5px; line-height: 1.5; }
-    .txt-tag { fill: #FFB547; font-size: 11px; font-weight: 600; }
-    .chip { fill: #17233D; stroke: #334155; }
+    .font-sans { font-family: Inter, Segoe UI, system-ui, -apple-system, sans-serif; }
+
+    .ship-hull { fill: url(#shipBg3Dark); stroke: #17233D; stroke-width: 1.5; }
+    .txt-title { fill: #FFB547; font-weight: 800; font-size: 26px; }
+    .txt-desc  { fill: #7C8BA8; font-size: 16px; line-height: 1.5; }
+    .txt-tag   { fill: #FFB547; font-size: 14px; font-weight: 700; }
+    .txt-plate { fill: #FFB547; font-size: 14px; font-weight: 700; letter-spacing: 1.5; }
+    .chip      { fill: #17233D; stroke: #334155; }
+    .arrow-pth { fill: none; stroke: #FFB547; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 
     @media (prefers-color-scheme: light) {
-      .ship-hull { fill: #FFFFFF; stroke: #CBD5E1; }
-      .txt-name { fill: #D98A00; }
-      .txt-desc { fill: #475569; }
-      .txt-tag { fill: #D98A00; }
-      .chip { fill: #F1F5F9; stroke: #CBD5E1; }
+      .ship-hull { fill: url(#shipBg3Light); stroke: #CBD5E1; }
+      .txt-title { fill: #D98A00; }
+      .txt-desc  { fill: #475569; }
+      .txt-tag   { fill: #D98A00; }
+      .txt-plate { fill: #D98A00; }
+      .chip      { fill: #F1F5F9; stroke: #CBD5E1; }
+      .arrow-pth { stroke: #D98A00; }
     }
 
-    @keyframes bobVessel3 {
+    @keyframes bobAlpha {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+      50% { transform: translateY(-7px); }
     }
-    @keyframes shieldPulse3 {
-      0%, 100% { stroke-opacity: 0.2; }
-      50% { stroke-opacity: 0.9; }
+    @keyframes pulseShieldArc {
+      0%, 100% { stroke-opacity: 0.3; }
+      50% { stroke-opacity: 1; }
     }
 
-    .vessel-bob3 { animation: bobVessel3 5.4s ease-in-out infinite 0.2s; }
-    .shield-ring3 { animation: shieldPulse3 2.2s ease-in-out infinite; }
+    .vessel-motion3 { animation: bobAlpha 5.4s ease-in-out infinite 0.2s; }
+    .shield-arc3    { animation: pulseShieldArc 2.4s ease-in-out infinite; }
 
     @media (prefers-reduced-motion: reduce) {
-      .vessel-bob3, .shield-ring3 { animation: none !important; }
+      .vessel-motion3, .shield-arc3 { animation: none !important; }
     }
   </style>
 
-  <path d="M 20,1 L 560,1 L 579,20 L 579,260 L 560,279 L 20,279 L 1,260 L 1,20 Z" class="ship-hull"/>
+  <path d="M 22,1 L 578,1 L 599,22 L 599,318 L 578,339 L 22,339 L 1,318 L 1,22 Z" class="ship-hull"/>
 
-  <!-- Left: Ship Silhouette (Heavily Armored Audit Frigate with Amber Shield Pulse) -->
-  <g class="vessel-bob3" transform="translate(30, 36)">
-    <!-- Protective Shield Arc -->
-    <path d="M 15,35 A 40,40 0 0,1 115,35" fill="none" stroke="#FFB547" stroke-width="2" stroke-dasharray="6,4" class="shield-ring3"/>
-    <!-- Frigate Hull -->
-    <polygon points="115,65 95,45 80,45 70,35 40,35 30,45 15,55 5,65 15,75 30,85 40,95 70,95 80,85 95,85" fill="#17233D" stroke="#FFB547" stroke-width="1.8"/>
-    <!-- Scanner Cockpit -->
-    <polygon points="85,65 70,55 50,55 60,65 50,75 70,75" fill="#070B14" stroke="#FFB547" stroke-width="1.2"/>
-    <circle cx="88" cy="65" r="3.5" fill="#FFB547"/>
-    <!-- Amber Thruster Exhaust -->
-    <polygon points="5,65 -15,58 -24,65 -15,72" fill="#FFB547" opacity="0.8"/>
-    <text x="65" y="118" class="font-mono" font-size="9" fill="#FFB547" text-anchor="middle" letter-spacing="1">VESSEL // ALPHA-03</text>
+  <!-- TOP HALF: Large Centered Ship Silhouette (AlphaStick Armored Frigate) -->
+  <g class="vessel-motion3" transform="translate(300, 75)">
+    <!-- Protective Shield Arc (Fully within viewBox) -->
+    <path d="M -110,-10 A 130,55 0 0,1 110,-10" fill="none" stroke="#FFB547" stroke-width="2.5" stroke-dasharray="8,6" class="shield-arc3"/>
+
+    <!-- Armored Frigate Silhouette -->
+    <polygon points="110,0 80,-25 45,-25 30,-40 -15,-40 -35,-25 -70,-25 -95,-10 -95,10 -70,25 -35,25 -15,40 30,40 45,25 80,25" fill="#17233D" stroke="#FFB547" stroke-width="2.5"/>
+    
+    <!-- Central Bridge Core -->
+    <polygon points="65,0 40,-14 0,-14 15,0 0,14 40,14" fill="#070B14" stroke="#FFB547" stroke-width="1.8"/>
+    <circle cx="50" cy="0" r="5" fill="#FFB547"/>
+
+    <!-- Amber Heavy Thruster Exhaust -->
+    <polygon points="-95,0 -125,-8 -145,0 -125,8" fill="#FFB547" opacity="0.85"/>
   </g>
 
-  <!-- Right: Data Readout & Description -->
-  <g transform="translate(185, 42)">
-    <text x="0" y="20" class="font-mono txt-name">AlphaStick-Android [↗]</text>
-    <line x1="0" y1="32" x2="360" y2="32" stroke="#17233D" stroke-width="1.2"/>
+  <!-- Vessel Plate Header -->
+  <text x="36" y="165" class="font-mono txt-plate">VESSEL // ALPHA-03</text>
+  <line x1="36" y1="175" x2="564" y2="175" stroke="#17233D" stroke-width="1.5"/>
 
-    <!-- Verbatim fact description -->
-    <text x="0" y="60" class="font-mono txt-desc">
-      <tspan x="0" dy="0">Modular Android vulnerability auditing engine</tspan>
-      <tspan x="0" dy="19">with heuristic scanning, explainable risk</tspan>
-      <tspan x="0" dy="19">scoring, and clean MVVM architecture built</tspan>
-      <tspan x="0" dy="19">with Jetpack Compose.</tspan>
-    </text>
-
-    <!-- Chips -->
-    <g transform="translate(0, 160)">
-      <rect width="55" height="22" rx="4" class="chip"/>
-      <text x="27.5" y="15" class="font-mono txt-tag" text-anchor="middle">Kotlin</text>
-
-      <rect x="63" width="125" height="22" rx="4" class="chip"/>
-      <text x="125.5" y="15" class="font-mono txt-tag" text-anchor="middle">Jetpack Compose</text>
-
-      <rect x="196" width="95" height="22" rx="4" class="chip"/>
-      <text x="243.5" y="15" class="font-mono txt-tag" text-anchor="middle">Android SDK</text>
+  <!-- BOTTOM HALF: Title + Link Arrow + Description + Chips -->
+  <g transform="translate(36, 210)">
+    <text x="0" y="0" class="font-sans txt-title">AlphaStick-Android</text>
+    <g transform="translate(265, -18)">
+      <path d="M 0,16 L 16,0 M 4,0 L 16,0 L 16,12" class="arrow-pth"/>
     </g>
+  </g>
+
+  <text x="36" y="240" class="font-mono txt-desc">
+    <tspan x="36" dy="0">Modular Android auditing engine with heuristic scanning,</tspan>
+    <tspan x="36" dy="24">explainable risk scoring, and Jetpack Compose MVVM.</tspan>
+  </text>
+
+  <g transform="translate(36, 290)">
+    <rect width="78" height="30" rx="5" class="chip"/>
+    <text x="39" y="20" class="font-mono txt-tag" text-anchor="middle">Kotlin</text>
+
+    <rect x="90" width="160" height="30" rx="5" class="chip"/>
+    <text x="170" y="20" class="font-mono txt-tag" text-anchor="middle">Jetpack Compose</text>
+
+    <rect x="262" width="130" height="30" rx="5" class="chip"/>
+    <text x="327" y="20" class="font-mono txt-tag" text-anchor="middle">Android SDK</text>
   </g>
 </svg>

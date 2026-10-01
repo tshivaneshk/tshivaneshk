@@ -1,85 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 280" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
   <defs>
-    <linearGradient id="shipBg2" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="shipBg2Dark" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#111A2E"/>
       <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="shipBg2Light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DDE5F2"/>
     </linearGradient>
   </defs>
 
   <style>
     .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .ship-hull { fill: url(#shipBg2); stroke: #17233D; stroke-width: 1.5; }
-    .txt-name { fill: #8B5CF6; font-weight: 700; font-size: 18px; }
-    .txt-desc { fill: #7C8BA8; font-size: 12.5px; line-height: 1.5; }
-    .txt-tag { fill: #8B5CF6; font-size: 11px; font-weight: 600; }
-    .chip { fill: #17233D; stroke: #334155; }
+    .font-sans { font-family: Inter, Segoe UI, system-ui, -apple-system, sans-serif; }
+
+    .ship-hull { fill: url(#shipBg2Dark); stroke: #17233D; stroke-width: 1.5; }
+    .txt-title { fill: #8B5CF6; font-weight: 800; font-size: 26px; }
+    .txt-desc  { fill: #7C8BA8; font-size: 16px; line-height: 1.5; }
+    .txt-tag   { fill: #8B5CF6; font-size: 14px; font-weight: 700; }
+    .txt-plate { fill: #8B5CF6; font-size: 14px; font-weight: 700; letter-spacing: 1.5; }
+    .chip      { fill: #17233D; stroke: #334155; }
+    .arrow-pth { fill: none; stroke: #8B5CF6; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 
     @media (prefers-color-scheme: light) {
-      .ship-hull { fill: #FFFFFF; stroke: #CBD5E1; }
-      .txt-name { fill: #6D3FD6; }
-      .txt-desc { fill: #475569; }
-      .txt-tag { fill: #6D3FD6; }
-      .chip { fill: #F1F5F9; stroke: #CBD5E1; }
+      .ship-hull { fill: url(#shipBg2Light); stroke: #CBD5E1; }
+      .txt-title { fill: #6D3FD6; }
+      .txt-desc  { fill: #475569; }
+      .txt-tag   { fill: #6D3FD6; }
+      .txt-plate { fill: #6D3FD6; }
+      .chip      { fill: #F1F5F9; stroke: #CBD5E1; }
+      .arrow-pth { stroke: #6D3FD6; }
     }
 
-    @keyframes bobVessel2 {
+    @keyframes bobWolf {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-7px); }
     }
-    @keyframes pulseEngine2 {
+    @keyframes pulseWolfThruster {
       0%, 100% { opacity: 0.4; }
       50% { opacity: 1; }
     }
 
-    .vessel-bob2 { animation: bobVessel2 4.8s ease-in-out infinite 0.5s; }
-    .engine-pulse2 { animation: pulseEngine2 1.6s ease-in-out infinite; }
+    .vessel-motion2 { animation: bobWolf 4.8s ease-in-out infinite 0.3s; }
+    .thruster-glow2 { animation: pulseWolfThruster 1.5s ease-in-out infinite; }
 
     @media (prefers-reduced-motion: reduce) {
-      .vessel-bob2, .engine-pulse2 { animation: none !important; }
+      .vessel-motion2, .thruster-glow2 { animation: none !important; }
     }
   </style>
 
-  <path d="M 20,1 L 560,1 L 579,20 L 579,260 L 560,279 L 20,279 L 1,260 L 1,20 Z" class="ship-hull"/>
+  <path d="M 22,1 L 578,1 L 599,22 L 599,318 L 578,339 L 22,339 L 1,318 L 1,22 Z" class="ship-hull"/>
 
-  <!-- Left: Ship Silhouette (Fast Interceptor with Angular Wings & Violet Trail) -->
-  <g class="vessel-bob2" transform="translate(30, 36)">
-    <!-- Interceptor Silhouette -->
-    <polygon points="125,65 100,50 40,30 20,30 30,55 5,60 0,65 5,70 30,75 20,100 40,100 100,80" fill="#17233D" stroke="#8B5CF6" stroke-width="1.8"/>
-    <!-- Cockpit & Weapon Core -->
-    <polygon points="90,65 70,58 50,65 70,72" fill="#070B14" stroke="#8B5CF6" stroke-width="1.2"/>
-    <circle cx="95" cy="65" r="3" fill="#8B5CF6"/>
-    <!-- Dual Violet Thruster Exhaust -->
-    <polygon points="0,60 -18,58 -28,60 -18,62" fill="#8B5CF6" class="engine-pulse2"/>
-    <polygon points="0,70 -18,68 -28,70 -18,72" fill="#8B5CF6" class="engine-pulse2"/>
-    <text x="65" y="118" class="font-mono" font-size="9" fill="#8B5CF6" text-anchor="middle" letter-spacing="1">VESSEL // WOLF-02</text>
+  <!-- TOP HALF: Large Centered Ship Silhouette (Wolfsniff Interceptor) -->
+  <g class="vessel-motion2" transform="translate(300, 75)">
+    <!-- Interceptor Silhouette (260px wide, aggressive angular wings) -->
+    <polygon points="120,0 80,-30 0,-15 -40,-45 -80,-45 -60,-15 -90,-8 -105,0 -90,8 -60,15 -80,45 -40,45 0,15 80,30" fill="#17233D" stroke="#8B5CF6" stroke-width="2.5"/>
+    
+    <!-- Central Stealth Canopy -->
+    <polygon points="70,0 30,-12 -15,0 30,12" fill="#070B14" stroke="#8B5CF6" stroke-width="1.8"/>
+    <circle cx="50" cy="0" r="5" fill="#8B5CF6"/>
+
+    <!-- Dual Violet Thruster Plasma Trails -->
+    <polygon points="-80,-25 -115,-28 -135,-25 -115,-22" fill="#8B5CF6" class="thruster-glow2"/>
+    <polygon points="-80,25 -115,22 -135,25 -115,28" fill="#8B5CF6" class="thruster-glow2"/>
   </g>
 
-  <!-- Right: Data Readout & Description -->
-  <g transform="translate(185, 42)">
-    <text x="0" y="20" class="font-mono txt-name">Wolfsniff — Network IDS [↗]</text>
-    <line x1="0" y1="32" x2="360" y2="32" stroke="#17233D" stroke-width="1.2"/>
+  <!-- Vessel Plate Header -->
+  <text x="36" y="165" class="font-mono txt-plate">VESSEL // WOLF-02</text>
+  <line x1="36" y1="175" x2="564" y2="175" stroke="#17233D" stroke-width="1.5"/>
 
-    <!-- Verbatim fact description -->
-    <text x="0" y="60" class="font-mono txt-desc">
-      <tspan x="0" dy="0">Hybrid Network Intrusion Detection System</tspan>
-      <tspan x="0" dy="19">combining high-performance native C packet</tspan>
-      <tspan x="0" dy="19">capture with Random Forest ML models mapped</tspan>
-      <tspan x="0" dy="19">to MITRE ATT&amp;CK.</tspan>
-    </text>
-
-    <!-- Chips -->
-    <g transform="translate(0, 160)">
-      <rect width="32" height="22" rx="4" class="chip"/>
-      <text x="16" y="15" class="font-mono txt-tag" text-anchor="middle">C</text>
-
-      <rect x="40" width="58" height="22" rx="4" class="chip"/>
-      <text x="69" y="15" class="font-mono txt-tag" text-anchor="middle">Python</text>
-
-      <rect x="106" width="90" height="22" rx="4" class="chip"/>
-      <text x="151" y="15" class="font-mono txt-tag" text-anchor="middle">Scikit-learn</text>
-
-      <rect x="204" width="50" height="22" rx="4" class="chip"/>
-      <text x="229" y="15" class="font-mono txt-tag" text-anchor="middle">PCAP</text>
+  <!-- BOTTOM HALF: Title + Link Arrow + Description + Chips -->
+  <g transform="translate(36, 210)">
+    <text x="0" y="0" class="font-sans txt-title">Wolfsniff — Network IDS</text>
+    <g transform="translate(340, -18)">
+      <path d="M 0,16 L 16,0 M 4,0 L 16,0 L 16,12" class="arrow-pth"/>
     </g>
+  </g>
+
+  <text x="36" y="240" class="font-mono txt-desc">
+    <tspan x="36" dy="0">Hybrid Network IDS combining native C packet capture</tspan>
+    <tspan x="36" dy="24">with Random Forest ML models mapped to MITRE ATT&amp;CK.</tspan>
+  </text>
+
+  <g transform="translate(36, 290)">
+    <rect width="48" height="30" rx="5" class="chip"/>
+    <text x="24" y="20" class="font-mono txt-tag" text-anchor="middle">C</text>
+
+    <rect x="60" width="84" height="30" rx="5" class="chip"/>
+    <text x="102" y="20" class="font-mono txt-tag" text-anchor="middle">Python</text>
+
+    <rect x="156" width="130" height="30" rx="5" class="chip"/>
+    <text x="221" y="20" class="font-mono txt-tag" text-anchor="middle">Scikit-learn</text>
+
+    <rect x="298" width="70" height="30" rx="5" class="chip"/>
+    <text x="333" y="20" class="font-mono txt-tag" text-anchor="middle">PCAP</text>
   </g>
 </svg>

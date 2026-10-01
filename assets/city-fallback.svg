@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050811"/>
+      <stop offset="60%" stop-color="#0D1627"/>
+      <stop offset="100%" stop-color="#17233D"/>
+    </linearGradient>
+    <linearGradient id="skyLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#DDE5F2"/>
+      <stop offset="60%" stop-color="#EBF1FA"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+
+    <!-- Star Glow Filter -->
+    <filter id="cityGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .sky-bg { fill: url(#skyDark); stroke: #17233D; stroke-width: 1.5; }
+    .bldg-dark { fill: #070B14; stroke: #111A2E; stroke-width: 1.2; }
+    .bldg-mid  { fill: #0B1120; stroke: #17233D; stroke-width: 1.2; }
+    .bldg-fore { fill: #111A2E; stroke: #1E293B; stroke-width: 1.2; }
+    .grid-iso  { stroke: #17233D; stroke-width: 1; stroke-dasharray: 4,6; }
+    .hud-title { fill: #00F5D4; font-weight: 700; }
+    .txt-sub   { fill: #7C8BA8; }
+
+    @media (prefers-color-scheme: light) {
+      .sky-bg { fill: url(#skyLight); stroke: #CBD5E1; }
+      .bldg-dark { fill: #CBD5E1; stroke: #94A3B8; }
+      .bldg-mid  { fill: #DDE5F2; stroke: #CBD5E1; }
+      .bldg-fore { fill: #F4F7FB; stroke: #CBD5E1; }
+      .grid-iso  { stroke: #CBD5E1; }
+      .hud-title { fill: #00B89F; }
+      .txt-sub   { fill: #64748B; }
+    }
+
+    @keyframes flickerWin1 { 0%, 100% { opacity: 0.9; } 45% { opacity: 0.2; } 50% { opacity: 0.8; } 85% { opacity: 0.3; } }
+    @keyframes flickerWin2 { 0%, 100% { opacity: 0.3; } 30% { opacity: 0.9; } 70% { opacity: 0.2; } 90% { opacity: 0.8; } }
+    @keyframes sweepCityScan { 0% { transform: translateY(0px); opacity: 0; } 50% { opacity: 0.8; } 100% { transform: translateY(480px); opacity: 0; } }
+
+    .flicker-1 { animation: flickerWin1 4.2s infinite ease-in-out; }
+    .flicker-2 { animation: flickerWin2 5.5s infinite ease-in-out; }
+    .city-scan { animation: sweepCityScan 8s linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .flicker-1, .flicker-2, .city-scan { animation: none !important; }
+      .flicker-1, .flicker-2 { opacity: 0.7 !important; }
+    }
+  </style>
+
+  <!-- Notched Sky Canvas Frame -->
+  <path d="M 24,1 L 1176,1 L 1199,24 L 1199,456 L 1176,479 L 24,479 L 1,456 L 1,24 Z" class="sky-bg"/>
+
+  <!-- Scanning Orbital Line -->
+  <line x1="1" y1="20" x2="1199" y2="20" stroke="#00F5D4" stroke-width="1.5" class="city-scan"/>
+
+  <!-- Top Readout Header -->
+  <g transform="translate(48, 44)">
+    <text x="0" y="0" class="font-mono hud-title" font-size="12" letter-spacing="1.5">OBSERVATORY // 3D CONTRIBUTION METROPOLIS [ORBITAL SCAN]</text>
+    <text x="0" y="20" class="font-mono txt-sub" font-size="10.5">Isometric architectural elevation of repository activity and code contributions</text>
+  </g>
+
+  <!-- Isometric Ground Grid -->
+  <g opacity="0.3">
+    <line x1="80" y1="440" x2="1120" y2="440" class="grid-iso"/>
+    <line x1="120" y1="400" x2="1080" y2="400" class="grid-iso"/>
+    <line x1="180" y1="360" x2="1020" y2="360" class="grid-iso"/>
+  </g>
+
+  <!-- Background Skyscrapers Layer -->
+  <g>
+    <!-- Tower 1 -->
+    <polygon points="120,440 120,240 160,210 200,240 200,440" class="bldg-dark"/>
+    <!-- Tower 2 -->
+    <polygon points="230,440 230,160 280,130 330,160 330,440" class="bldg-dark"/>
+    <!-- Tower 3 -->
+    <polygon points="360,440 360,200 410,170 460,200 460,440" class="bldg-dark"/>
+    <!-- Tower 4 (Center Spire) -->
+    <polygon points="560,440 560,110 600,80 640,110 640,440" class="bldg-dark"/>
+    <line x1="600" y1="80" x2="600" y2="30" stroke="#00F5D4" stroke-width="2"/>
+    <circle cx="600" cy="30" r="3" fill="#00F5D4" filter="url(#cityGlow)"/>
+    <!-- Tower 5 -->
+    <polygon points="740,440 740,180 790,150 840,180 840,440" class="bldg-dark"/>
+    <!-- Tower 6 -->
+    <polygon points="870,440 870,220 920,190 970,220 970,440" class="bldg-dark"/>
+    <!-- Tower 7 -->
+    <polygon points="1000,440 1000,260 1040,230 1080,260 1080,440" class="bldg-dark"/>
+  </g>
+
+  <!-- Midground Blocks Layer -->
+  <g>
+    <polygon points="170,440 170,280 230,280 230,440" class="bldg-mid"/>
+    <polygon points="290,440 290,220 370,220 370,440" class="bldg-mid"/>
+    <polygon points="480,440 480,180 550,180 550,440" class="bldg-mid"/>
+    <polygon points="650,440 650,210 730,210 730,440" class="bldg-mid"/>
+    <polygon points="800,440 800,260 880,260 880,440" class="bldg-mid"/>
+    <polygon points="930,440 930,300 1010,300 1010,440" class="bldg-mid"/>
+  </g>
+
+  <!-- Foreground Isometric Pillars (Representative of Contribution Columns) -->
+  <g>
+    <polygon points="210,440 210,340 250,320 290,340 290,440" class="bldg-fore"/>
+    <polygon points="340,440 340,300 390,270 440,300 440,440" class="bldg-fore"/>
+    <polygon points="460,440 460,260 510,230 560,260 560,440" class="bldg-fore"/>
+    <polygon points="620,440 620,280 670,250 720,280 720,440" class="bldg-fore"/>
+    <polygon points="760,440 760,320 810,290 860,320 860,440" class="bldg-fore"/>
+    <polygon points="890,440 890,360 930,340 970,360 970,440" class="bldg-fore"/>
+  </g>
+
+  <!-- Glowing Contribution Windows (Teal, Amber, Violet) -->
+  <g class="flicker-1">
+    <rect x="245" y="160" width="8" height="12" rx="2" fill="#00F5D4"/>
+    <rect x="260" y="160" width="8" height="12" rx="2" fill="#00F5D4"/>
+    <rect x="275" y="160" width="8" height="12" rx="2" fill="#00F5D4"/>
+    <rect x="290" y="160" width="8" height="12" rx="2" fill="#00F5D4"/>
+
+    <rect x="585" y="140" width="8" height="12" rx="2" fill="#FFB547"/>
+    <rect x="600" y="140" width="8" height="12" rx="2" fill="#FFB547"/>
+
+    <rect x="765" y="210" width="8" height="12" rx="2" fill="#8B5CF6"/>
+    <rect x="780" y="210" width="8" height="12" rx="2" fill="#8B5CF6"/>
+  </g>
+
+  <g class="flicker-2">
+    <rect x="375" y="240" width="8" height="12" rx="2" fill="#00F5D4"/>
+    <rect x="390" y="240" width="8" height="12" rx="2" fill="#00F5D4"/>
+    <rect x="495" y="210" width="8" height="12" rx="2" fill="#00F5D4"/>
+    <rect x="510" y="210" width="8" height="12" rx="2" fill="#00F5D4"/>
+
+    <rect x="665" y="240" width="8" height="12" rx="2" fill="#FFB547"/>
+    <rect x="680" y="240" width="8" height="12" rx="2" fill="#FFB547"/>
+
+    <rect x="825" y="290" width="8" height="12" rx="2" fill="#8B5CF6"/>
+    <rect x="840" y="290" width="8" height="12" rx="2" fill="#8B5CF6"/>
+  </g>
+
+  <!-- Bottom Elevation Baseline -->
+  <line x1="24" y1="440" x2="1176" y2="440" stroke="#00F5D4" stroke-width="1.5" opacity="0.6"/>
+</svg>

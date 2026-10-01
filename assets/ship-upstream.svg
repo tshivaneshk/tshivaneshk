@@ -1,83 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 280" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
   <defs>
-    <linearGradient id="shipBg4" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="shipBg4Dark" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#111A2E"/>
       <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="shipBg4Light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DDE5F2"/>
+    </linearGradient>
+
+    <!-- Gradient Accent for Upstream Ship -->
+    <linearGradient id="upGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F5D4"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
     </linearGradient>
   </defs>
 
   <style>
     .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .ship-hull { fill: url(#shipBg4); stroke: #17233D; stroke-width: 1.5; }
-    .txt-name { fill: #00F5D4; font-weight: 700; font-size: 18px; }
-    .txt-desc { fill: #7C8BA8; font-size: 12.5px; line-height: 1.5; }
-    .txt-tag { fill: #00F5D4; font-size: 11px; font-weight: 600; }
-    .chip { fill: #17233D; stroke: #334155; }
+    .font-sans { font-family: Inter, Segoe UI, system-ui, -apple-system, sans-serif; }
+
+    .ship-hull { fill: url(#shipBg4Dark); stroke: #17233D; stroke-width: 1.5; }
+    .txt-title { fill: url(#upGrad); font-weight: 800; font-size: 26px; }
+    .txt-desc  { fill: #7C8BA8; font-size: 15px; line-height: 1.4; }
+    .txt-tag   { fill: #00F5D4; font-size: 14px; font-weight: 700; }
+    .txt-plate { fill: #00F5D4; font-size: 14px; font-weight: 700; letter-spacing: 1.5; }
+    .chip      { fill: #17233D; stroke: #334155; }
+    .arrow-pth { fill: none; stroke: #00F5D4; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .split-line{ stroke: #17233D; stroke-width: 1.2; }
 
     @media (prefers-color-scheme: light) {
-      .ship-hull { fill: #FFFFFF; stroke: #CBD5E1; }
-      .txt-name { fill: #00B89F; }
-      .txt-desc { fill: #475569; }
-      .txt-tag { fill: #00B89F; }
-      .chip { fill: #F1F5F9; stroke: #CBD5E1; }
+      .ship-hull { fill: url(#shipBg4Light); stroke: #CBD5E1; }
+      .txt-desc  { fill: #475569; }
+      .txt-tag   { fill: #00B89F; }
+      .txt-plate { fill: #00B89F; }
+      .chip      { fill: #F1F5F9; stroke: #CBD5E1; }
+      .arrow-pth { stroke: #00B89F; }
+      .split-line{ stroke: #CBD5E1; }
     }
 
-    @keyframes bobVessel4 {
+    @keyframes bobUpstream {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-5px); }
+      50% { transform: translateY(-6px); }
     }
-    @keyframes pulseRing4 {
-      0%, 100% { transform: scale(0.9); opacity: 0.3; }
-      50% { transform: scale(1.15); opacity: 0.9; }
+    @keyframes pulseRingOrbit {
+      0%, 100% { transform: scale(0.92); opacity: 0.35; }
+      50% { transform: scale(1.1); opacity: 0.95; }
     }
 
-    .vessel-bob4 { animation: bobVessel4 5.6s ease-in-out infinite 0.7s; }
-    .core-ring4 { animation: pulseRing4 2.5s ease-in-out infinite; transform-origin: 65px 65px; }
+    .vessel-motion4 { animation: bobUpstream 5.6s ease-in-out infinite 0.4s; }
+    .core-ring-anim { animation: pulseRingOrbit 2.6s ease-in-out infinite; transform-origin: 300px 75px; }
 
     @media (prefers-reduced-motion: reduce) {
-      .vessel-bob4, .core-ring4 { animation: none !important; }
+      .vessel-motion4, .core-ring-anim { animation: none !important; }
     }
   </style>
 
-  <path d="M 20,1 L 560,1 L 579,20 L 579,260 L 560,279 L 20,279 L 1,260 L 1,20 Z" class="ship-hull"/>
+  <path d="M 22,1 L 578,1 L 599,22 L 599,318 L 578,339 L 22,339 L 1,318 L 1,22 Z" class="ship-hull"/>
 
-  <!-- Left: Ship Silhouette (Open Source Carrier with Docking Ring & Teal Emitter) -->
-  <g class="vessel-bob4" transform="translate(30, 36)">
-    <!-- Carrier Drone Ring -->
-    <circle cx="65" cy="65" r="38" fill="none" stroke="#00F5D4" stroke-width="1.8" stroke-dasharray="8,6" class="core-ring4"/>
-    <!-- Central Tug Hull -->
-    <polygon points="105,65 85,50 35,50 15,60 5,65 15,70 35,80 85,80" fill="#17233D" stroke="#00F5D4" stroke-width="1.8"/>
+  <!-- TOP HALF: Large Centered Ship Silhouette (Upstream Drone Carrier) -->
+  <g class="vessel-motion4" transform="translate(300, 75)">
+    <!-- Rotating Pulsing Ring Core -->
+    <circle cx="0" cy="0" r="48" fill="none" stroke="url(#upGrad)" stroke-width="2" stroke-dasharray="10,6" class="core-ring-anim"/>
+
+    <!-- Central Carrier Hull -->
+    <polygon points="105,0 75,-25 15,-25 -20,-15 -55,-25 -85,-15 -75,0 -85,15 -55,25 -20,15 15,25 75,25" fill="#17233D" stroke="url(#upGrad)" stroke-width="2.5"/>
+    
     <!-- Command Bridge -->
-    <rect x="50" y="58" width="22" height="14" rx="3" fill="#070B14" stroke="#00F5D4" stroke-width="1.2"/>
-    <circle cx="61" cy="65" r="3.5" fill="#00F5D4"/>
-    <!-- Plasma Exhaust -->
-    <polygon points="5,65 -15,59 -24,65 -15,71" fill="#00F5D4" opacity="0.8"/>
-    <text x="65" y="118" class="font-mono" font-size="9" fill="#00F5D4" text-anchor="middle" letter-spacing="1">VESSEL // UPSTREAM-04</text>
+    <rect x="-15" y="-10" width="30" height="20" rx="4" fill="#070B14" stroke="#00F5D4" stroke-width="1.8"/>
+    <circle cx="0" cy="0" r="5" fill="#00F5D4"/>
+
+    <!-- Dual Exhaust Trails -->
+    <polygon points="-80,-8 -110,-12 -130,-8 -110,-4" fill="#00F5D4" opacity="0.85"/>
+    <polygon points="-80,8 -110,4 -130,8 -110,12" fill="#8B5CF6" opacity="0.85"/>
   </g>
 
-  <!-- Right: Data Readout & Description -->
-  <g transform="translate(185, 42)">
-    <text x="0" y="20" class="font-mono txt-name">Upstream Core Contributions</text>
-    <line x1="0" y1="32" x2="360" y2="32" stroke="#17233D" stroke-width="1.2"/>
+  <!-- Vessel Plate Header -->
+  <text x="36" y="165" class="font-mono txt-plate">VESSEL // UPSTREAM-04</text>
+  <line x1="36" y1="175" x2="564" y2="175" stroke="#17233D" stroke-width="1.5"/>
 
-    <!-- Verbatim fact description -->
-    <text x="0" y="60" class="font-mono txt-desc">
-      <tspan x="0" dy="0">• Androguard/apk-parser #8: Fixed critical APK</tspan>
-      <tspan x="0" dy="19">  parsing crashes from preview SDK codenames.</tspan>
-      <tspan x="0" dy="19">• OWASP/WSTG #1543: Modernized XSSI client</tspan>
-      <tspan x="0" dy="19">  side testing methodology.</tspan>
-    </text>
-
-    <!-- Chips -->
-    <g transform="translate(0, 160)">
-      <rect width="130" height="22" rx="4" class="chip"/>
-      <text x="65" y="15" class="font-mono txt-tag" text-anchor="middle">Bytecode Analysis</text>
-
-      <rect x="138" width="65" height="22" rx="4" class="chip"/>
-      <text x="170.5" y="15" class="font-mono txt-tag" text-anchor="middle">OWASP</text>
-
-      <rect x="211" width="105" height="22" rx="4" class="chip"/>
-      <text x="263.5" y="15" class="font-mono txt-tag" text-anchor="middle">PRs Merged</text>
+  <!-- BOTTOM HALF: Title + Link Arrow + Two Short Lines (No Bullets) + Chips -->
+  <g transform="translate(36, 210)">
+    <text x="0" y="0" class="font-sans txt-title">Upstream Core Contributions</text>
+    <g transform="translate(380, -18)">
+      <path d="M 0,16 L 16,0 M 4,0 L 16,0 L 16,12" class="arrow-pth"/>
     </g>
+  </g>
+
+  <!-- Two Short Lines without bullet characters, separated by a thin divider line -->
+  <g transform="translate(36, 236)">
+    <text x="0" y="0" class="font-mono txt-desc">
+      Androguard / apk-parser #8: Fixed preview SDK codename crashes in permission loading
+    </text>
+    <line x1="0" y1="10" x2="528" y2="10" class="split-line"/>
+    <text x="0" y="26" class="font-mono txt-desc">
+      OWASP / Web Security Testing Guide #1543: Modernized XSSI client testing guidance
+    </text>
+  </g>
+
+  <g transform="translate(36, 290)">
+    <rect width="160" height="30" rx="5" class="chip"/>
+    <text x="80" y="20" class="font-mono txt-tag" text-anchor="middle">Bytecode Analysis</text>
+
+    <rect x="172" width="84" height="30" rx="5" class="chip"/>
+    <text x="214" y="20" class="font-mono txt-tag" text-anchor="middle">OWASP</text>
+
+    <rect x="268" width="130" height="30" rx="5" class="chip"/>
+    <text x="333" y="20" class="font-mono txt-tag" text-anchor="middle">PRs Merged</text>
   </g>
 </svg>

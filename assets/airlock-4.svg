@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="300" height="150">
   <defs>
     <linearGradient id="doorBg4Dark" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#111A2E"/>
@@ -42,10 +42,10 @@
   <g transform="translate(30, 24)">
     <circle cx="8" cy="8" r="4.5" class="status-light pulse-l4"/>
     <text x="20" y="12" class="font-mono" font-size="10" font-weight="700" fill="#00F5D4" letter-spacing="1.5">AIRLOCK 04</text>
-    <text x="180" y="12" class="font-mono" font-size="9.5" class="txt-sub">CARRIER OPEN</text>
+    <text x="180" y="12" class="font-mono" font-size="9.5" class="txt-sub">FREQUENCY OPEN</text>
 
-    <text x="0" y="55" class="font-mono txt-title" font-size="20" letter-spacing="2">COMMS</text>
-    <text x="0" y="78" class="font-mono txt-sub" font-size="11">Sign log &amp; solve signal</text>
+    <text x="0" y="55" class="font-mono txt-title" font-size="20" letter-spacing="2">CONTACT</text>
+    <text x="0" y="78" class="font-mono txt-sub" font-size="11">Station links &amp; communication</text>
 
     <path d="M 0,95 L 240,95" stroke="#17233D" stroke-width="1"/>
     <text x="0" y="110" class="font-mono" font-size="10" font-weight="600" fill="#00F5D4">[ ENTER MODULE ↗ ]</text>
