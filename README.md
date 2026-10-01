@@ -8,12 +8,15 @@
 
 <br/>
 
-<a href="#console"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/airlock-1.svg" alt="Airlock to terminal console" width="280" /></a>
-<a href="#hangar"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/airlock-2.svg" alt="Airlock to hangar bay" width="280" /></a>
-<a href="#observatory"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/airlock-3.svg" alt="Airlock to observatory telemetry" width="280" /></a>
-<a href="#contact"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/airlock-4.svg" alt="Airlock to contact links" width="280" /></a>
+<a href="#console"><img src="./assets/airlock-1.svg" alt="Airlock to terminal console" width="22%" /></a>
+&nbsp;
+<a href="#hangar"><img src="./assets/airlock-2.svg" alt="Airlock to hangar bay" width="22%" /></a>
+&nbsp;
+<a href="#observatory"><img src="./assets/airlock-3.svg" alt="Airlock to observatory telemetry" width="22%" /></a>
+&nbsp;
+<a href="#contact"><img src="./assets/airlock-4.svg" alt="Airlock to contact links" width="22%" /></a>
 
-<br/>
+<br/><br/>
 
 <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/signal.svg" alt="Station signal wave divider" width="100%" />
 
@@ -51,18 +54,6 @@
 
 <br/>
 
-<details>
-  <summary>Mini game: contribution arcade</summary>
-  <br/>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg">
-    <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg" alt="Contribution arcade game animation" width="100%" />
-  </picture>
-</details>
-
-<br/>
-
 <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/signal.svg" alt="Station signal wave divider" width="100%" />
 
 </div>
@@ -71,12 +62,11 @@
 
 <div align="center">
 
-<a href="https://github.com/tshivaneshk?tab=repositories"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-android-forensics.svg" alt="Android Security and Forensics platform vessel" width="440" /></a>
-<a href="https://github.com/tshivaneshk/Wolfsniff"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-wolfsniff.svg" alt="Wolfsniff network intrusion detection system vessel" width="440" /></a>
-<a href="https://github.com/tshivaneshk/AlphaStick-Android"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-alphastick.svg" alt="AlphaStick Android auditing engine vessel" width="440" /></a>
-<a href="https://github.com/androguard/apk-parser/pull/8"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-upstream.svg" alt="Upstream core open source contributions vessel" width="440" /></a>
+<a href="https://github.com/tshivaneshk?tab=repositories"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-android-forensics.svg" alt="Android Security and Forensics platform vessel" width="48%" /></a>
+&nbsp;
+<a href="https://github.com/tshivaneshk/Wolfsniff"><img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/ship-wolfsniff.svg" alt="Wolfsniff network intrusion detection system vessel" width="48%" /></a>
 
-<br/>
+<br/><br/>
 
 <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/signal.svg" alt="Station signal wave divider" width="100%" />
 
@@ -113,13 +103,5 @@
 <a href="https://github.com/tshivaneshk" target="_blank">
   <img src="https://img.shields.io/badge/GITHUB-17233D?style=for-the-badge&logo=github&logoColor=E6EDF7" alt="GitHub link" />
 </a>
-
-<br/><br/>
-
-<img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/undock.svg" alt="Ship undocking and departing along a vector line to a distant beacon" width="100%" />
-
-<br/>
-<sub>Mission telemetry recorded. Safe voyages through the void.</sub><br/>
-<sub>last transmission: <!-- TIMESTAMP_START -->2026-10-01 21:42 UTC<!-- TIMESTAMP_END --></sub>
 
 </div>
