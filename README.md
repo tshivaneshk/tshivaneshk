@@ -1,101 +1,121 @@
 <div align="center">
 
-<img src="./assets/signature-brand.svg" alt="T Shivanesh Kumar" width="100%" />
+# T Shivanesh Kumar
 
-<br/><br/>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=38BDF8&center=true&vCenter=true&width=620&lines=Cybersecurity+Engineer+%26+Android+Developer;ML+%26+Full+Stack+Enthusiast+(Actively+Learning);Actively+learning+Front+End+Development;Open+Source+Contributor+%40+Androguard+%26+OWASP)](https://git.io/typing-svg)
 
-<a href="https://portfolio-rho-sooty-uwjqzmzrhi.vercel.app/" target="_blank">
-  <code>PORTFOLIO ↗</code>
-</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/tshivaneshk/" target="_blank">
-  <code>LINKEDIN ↗</code>
-</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a href="https://github.com/tshivaneshk?tab=repositories" target="_blank">
-  <code>REPOSITORIES ↗</code>
-</a>
+<br/>
 
-<br/><br/>
+[![Portfolio](https://img.shields.io/badge/Portfolio-0F172A?style=for-the-badge&logo=vercel&logoColor=38BDF8)](https://portfolio-rho-sooty-uwjqzmzrhi.vercel.app/)
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/tshivaneshk/)
+&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tshivaneshk)
+
+<br/>
+
+---
 
 </div>
 
----
+## About Me
 
-<br/>
+Cybersecurity Engineer and Android Developer passionate about system-level security, reverse engineering, and building resilient software. 
 
-> Engineer focused on **security research** and **software systems**. Most of my work sits at the intersection of **Android internals**, **binary reverse engineering**, and **defensive tooling** — motivated by understanding how software behaves under conditions its authors didn't anticipate.
-
-<br/>
-
----
-
-### `01` / CURRENTLY BUILDING
-
-#### Android Security & Forensics Suite
-A desktop analysis tool connecting directly through ADB to audit application sandbox boundaries, inspect dynamic service interactions, and surface vulnerabilities without external overhead.
-
-<br/>
+- Specialized in Android security internals, static/dynamic APK inspection, and network intrusion analysis.
+- Actively expanding into modern Front End Development and Full-Stack architectures.
+- Upstream open-source contributor investigating root causes and patching parsers.
 
 ---
 
-### `02` / SELECTED WORK
+## Selected Work
 
-#### [Wolfsniff](https://github.com/tshivaneshk/Wolfsniff)
-Hybrid network intrusion detection engine using a native C packet capture core with flow classification on UNSW-NB15.
-<br/>
-<sub><a href="https://github.com/tshivaneshk/Wolfsniff">VIEW REPOSITORY ↗</a></sub>
-
-<br/>
-
-#### [AlphaStick-Android](https://github.com/tshivaneshk/AlphaStick-Android)
-Modular Android security auditing tool built with Kotlin and Jetpack Compose for heuristic threat analysis and explainable risk scoring.
-<br/>
-<sub><a href="https://github.com/tshivaneshk/AlphaStick-Android">VIEW REPOSITORY ↗</a></sub>
-
-<br/>
-
-#### [ropelog-engine](https://github.com/tshivaneshk/ropelog-engine)
-Real-time log ingestion and streaming engine using a Treap-based Rope data structure in C++ for efficient chunk indexing.
-<br/>
-<sub><a href="https://github.com/tshivaneshk/ropelog-engine">VIEW REPOSITORY ↗</a></sub>
-
-<br/>
-
----
-
-### `03` / OPEN SOURCE
-
-#### [Androguard — apk-parser](https://github.com/androguard/apk-parser/pull/8)
-Investigated and resolved the issue where Android preview SDK codenames broke permission table parsing, including a unified resolver and regression suite.
-<br/>
-<sub><a href="https://github.com/androguard/apk-parser/pull/8">VIEW UPSTREAM PR #8 ↗</a></sub>
-
-<br/>
-
-#### [OWASP WSTG](https://github.com/OWASP/wstg/pull/1543)
-Refactored testing guidance for Cross-Site Script Inclusion (XSSI) to deprecate legacy browser techniques and align with modern defense standards.
-<br/>
-<sub><a href="https://github.com/OWASP/wstg/pull/1543">VIEW UPSTREAM PR #1543 ↗</a></sub>
-
-<br/>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Android Security & Forensics</h3>
+      <p>Desktop platform interfacing over ADB for deep static analysis, process monitoring, dynamic socket inspection, and automated vulnerability reporting.</p>
+      <p><b>Stack:</b> Python · ADB · Linux / Windows</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/tshivaneshk/Wolfsniff">Wolfsniff</a></h3>
+      <p>Hybrid Network Intrusion Detection System combining high-performance native C packet capture with Random Forest ML models mapped to MITRE ATT&CK.</p>
+      <p><b>Stack:</b> C · Python · Scikit-learn · PCAP</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/tshivaneshk/AlphaStick-Android">AlphaStick-Android</a></h3>
+      <p>Modular Android vulnerability auditing engine with heuristic scanning, explainable risk scoring, and MVVM architecture.</p>
+      <p><b>Stack:</b> Kotlin · Jetpack Compose · Android SDK</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/tshivaneshk/ropelog-engine">Ropelog Engine</a></h3>
+      <p>Real-time log ingestion and streaming visualization engine built on a Treap-based Rope data structure with SSE streaming.</p>
+      <p><b>Stack:</b> C++ · SSE · WebSockets · Linux</p>
+    </td>
+  </tr>
+</table>
 
 ---
+
+## Current Contributions & Activity
+
+- **<a href="https://github.com/androguard/apk-parser/pull/8">Androguard / apk-parser</a> (Merged PR #8)**: Fixed critical APK parsing crashes caused by Android SDK preview codenames in permission loading routines.
+- **<a href="https://github.com/OWASP/wstg/pull/1543">OWASP / Web Security Testing Guide</a> (Merged PR #1543)**: Modernized XSSI client-side testing methodology.
 
 <br/>
 
 <div align="center">
 
-<a href="https://portfolio-rho-sooty-uwjqzmzrhi.vercel.app/" target="_blank">
-  <code>EXPLORE PORTFOLIO ↗</code>
-</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.linkedin.com/in/tshivaneshk/" target="_blank">
-  <code>GET IN TOUCH ↗</code>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg">
+  <img alt="Contribution Snake Animation" src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg" width="100%" />
+</picture>
+
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api?username=tshivaneshk&show_icons=true&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8&icon_color=38bdf8&count_private=true" alt="GitHub Metrics" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=tshivaneshk&theme=transparent&hide_border=true&stroke=0000&background=00000000&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" />
+
+</div>
+
+---
+
+## Tech Stack
+
+<div align="center">
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=python,kotlin,c,cpp,java,rust,ts,js,html,css&perline=10" alt="Languages" />
 </a>
 
 <br/><br/>
 
-<sub>Engineered by <strong>T Shivanesh Kumar</strong></sub>
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=androidstudio,flutter,react,nextjs,tailwind,fastapi,nodejs,postgres&perline=10" alt="Frameworks & Tools" />
+</a>
 
+<br/><br/>
+
+<a href="https://skillicons.dev">
+  <img src="https://skillicons.dev/icons?i=linux,bash,git,github,githubactions,docker,vscode&perline=10" alt="Systems & DevOps" />
+</a>
+
+<br/><br/>
+
+![Ghidra](https://img.shields.io/badge/Ghidra-000000?style=for-the-badge&logo=shield&logoColor=38bdf8)
+![Frida](https://img.shields.io/badge/Frida-20232A?style=for-the-badge&logo=target&logoColor=38bdf8)
+![JADX](https://img.shields.io/badge/JADX-1e293b?style=for-the-badge&logo=android&logoColor=38bdf8)
+![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=portswigger&logoColor=white)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+
+</div>
+
+---
+
+<div align="center">
+  <sub>Built by <a href="https://github.com/tshivaneshk">T Shivanesh Kumar</a></sub>
 </div>
