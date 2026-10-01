@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="100%" height="100%">
+  <defs>
+    <linearGradient id="doorBg2Dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111A2E"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="doorBg2Light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DDE5F2"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .door-hull { fill: url(#doorBg2Dark); stroke: #17233D; stroke-width: 1.5; }
+    .txt-title { fill: #E6EDF7; font-weight: 700; }
+    .txt-sub { fill: #7C8BA8; }
+    .status-light { fill: #8B5CF6; }
+
+    @media (prefers-color-scheme: light) {
+      .door-hull { fill: url(#doorBg2Light); stroke: #CBD5E1; }
+      .txt-title { fill: #0F172A; }
+      .txt-sub { fill: #64748B; }
+      .status-light { fill: #6D3FD6; }
+    }
+
+    @keyframes pulseAir2 { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    @keyframes scanLine2 { 0% { transform: translateY(0px); opacity: 0; } 50% { opacity: 0.8; } 100% { transform: translateY(120px); opacity: 0; } }
+
+    .pulse-l2 { animation: pulseAir2 2.3s infinite ease-in-out; }
+    .scan-l2 { animation: scanLine2 4.4s linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pulse-l2, .scan-l2 { animation: none !important; }
+    }
+  </style>
+
+  <path d="M 16,1 L 284,1 L 299,16 L 299,134 L 284,149 L 16,149 L 1,134 L 1,16 Z" class="door-hull"/>
+  <line x1="16" y1="16" x2="284" y2="16" stroke="#8B5CF6" stroke-width="1.5" class="scan-l2"/>
+  <line x1="150" y1="1" x2="150" y2="149" stroke="#17233D" stroke-width="2" stroke-dasharray="8,6"/>
+
+  <g transform="translate(30, 24)">
+    <circle cx="8" cy="8" r="4.5" class="status-light pulse-l2"/>
+    <text x="20" y="12" class="font-mono" font-size="10" font-weight="700" fill="#8B5CF6" letter-spacing="1.5">AIRLOCK 02</text>
+    <text x="180" y="12" class="font-mono" font-size="9.5" class="txt-sub">BAY SECURE</text>
+
+    <text x="0" y="55" class="font-mono txt-title" font-size="20" letter-spacing="2">HANGAR</text>
+    <text x="0" y="78" class="font-mono txt-sub" font-size="11">Inspect 4 engineered vessels</text>
+
+    <path d="M 0,95 L 240,95" stroke="#17233D" stroke-width="1"/>
+    <text x="0" y="110" class="font-mono" font-size="10" font-weight="600" fill="#8B5CF6">[ ENTER MODULE ↗ ]</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+name: Solve Intercepted Signal
+description: Submit your decoded solution to access the crew verification roster
+title: "[SIGNAL DECODE]: "
+labels: ["signal-decode"]
+body:
+  - type: markdown
+    attributes:
+      value: "Submit the decoded secret passphrase to earn your place on the Decoded By roster."
+  - type: input
+    id: passphrase
+    attributes:
+      label: Decoded Passphrase
+      description: The decrypted plain text phrase.
+      placeholder: "Enter the decrypted string here"
+    validations:
+      required: true

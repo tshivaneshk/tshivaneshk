@@ -1,0 +1,334 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="dockVoidDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="50%" stop-color="#111A2E"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="dockVoidLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4F7FB"/>
+      <stop offset="50%" stop-color="#DDE5F2"/>
+      <stop offset="100%" stop-color="#F4F7FB"/>
+    </linearGradient>
+
+    <!-- Star Glow Filter -->
+    <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Sun Glare for Dawn Side / Light Mode -->
+    <radialGradient id="sunGlare" cx="15%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#FFF4D0" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 800; }
+
+    .bg-dock { fill: url(#dockVoidDark); }
+    .hull-line { stroke: #17233D; stroke-width: 1.5; fill: none; }
+    .station-body { fill: #111A2E; stroke: #17233D; stroke-width: 1.5; }
+    .signal-teal { fill: #00F5D4; }
+    .stroke-teal { stroke: #00F5D4; }
+    .hud-box { fill: #111A2E; stroke: #17233D; stroke-width: 1.5; }
+    .text-main { fill: #E6EDF7; }
+    .text-dim { fill: #7C8BA8; }
+    .star-point { fill: #E6EDF7; }
+    .sun-layer { display: none; }
+
+    @media (prefers-color-scheme: light) {
+      .bg-dock { fill: url(#dockVoidLight); }
+      .hull-line { stroke: #DDE5F2; }
+      .station-body { fill: #DDE5F2; stroke: #CBD5E1; }
+      .signal-teal { fill: #00B89F; }
+      .stroke-teal { stroke: #00B89F; }
+      .hud-box { fill: #FFFFFF; stroke: #CBD5E1; }
+      .text-main { fill: #0F172A; }
+      .text-dim { fill: #64748B; }
+      .star-point { fill: #7C8BA8; }
+      .sun-layer { display: block; fill: url(#sunGlare); }
+    }
+
+    /* Animations */
+    @keyframes twinkleP1 { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.95; } }
+    @keyframes twinkleP2 { 0%, 100% { opacity: 0.85; } 50% { opacity: 0.1; } }
+    @keyframes twinkleP3 { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.3); } }
+    
+    @keyframes stationRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes beaconBlink {
+      0%, 100% { opacity: 1; }
+      40% { opacity: 0.2; }
+      60% { opacity: 1; }
+      70% { opacity: 0.2; }
+    }
+
+    @keyframes shipDockCycle {
+      0% { transform: translate(-80px, 320px) scale(0.65); opacity: 0; }
+      10% { opacity: 1; }
+      55% { transform: translate(780px, 280px) scale(0.9); opacity: 1; }
+      80% { transform: translate(820px, 280px) scale(0.9); opacity: 1; }
+      90% { transform: translate(820px, 280px) scale(0.9); opacity: 0; }
+      100% { transform: translate(-80px, 320px) scale(0.65); opacity: 0; }
+    }
+
+    @keyframes strokeDrawName {
+      0% { stroke-dashoffset: 800; fill-opacity: 0; }
+      60% { stroke-dashoffset: 0; fill-opacity: 0.1; }
+      80%, 100% { stroke-dashoffset: 0; fill-opacity: 1; }
+    }
+
+    @keyframes cycleReadout {
+      0%, 30% { opacity: 1; }
+      33%, 63% { opacity: 0; }
+      66%, 96% { opacity: 0; }
+    }
+    @keyframes cycleReadout2 {
+      0%, 32% { opacity: 0; }
+      35%, 65% { opacity: 1; }
+      68%, 100% { opacity: 0; }
+    }
+    @keyframes cycleReadout3 {
+      0%, 65% { opacity: 0; }
+      68%, 98% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes crossfadeRole1 { 0%, 20% { opacity: 1; } 25%, 100% { opacity: 0; } }
+    @keyframes crossfadeRole2 { 0%, 24% { opacity: 0; } 25%, 45% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes crossfadeRole3 { 0%, 49% { opacity: 0; } 50%, 70% { opacity: 1; } 75%, 100% { opacity: 0; } }
+    @keyframes crossfadeRole4 { 0%, 74% { opacity: 0; } 75%, 95% { opacity: 1; } 100% { opacity: 0; } }
+
+    .twinkle-1 { animation: twinkleP1 2.8s infinite ease-in-out; }
+    .twinkle-2 { animation: twinkleP2 4.2s infinite ease-in-out; }
+    .twinkle-3 { animation: twinkleP3 3.4s infinite ease-in-out; transform-origin: center; }
+    .rot-ring { animation: stationRotate 28s linear infinite; transform-origin: 880px 280px; }
+    .beacon { animation: beaconBlink 2.2s infinite; }
+    .ship-anim { animation: shipDockCycle 20s linear infinite; }
+    .path-name {
+      stroke: #00F5D4;
+      stroke-width: 1.5;
+      stroke-dasharray: 800;
+      animation: strokeDrawName 4s ease-out forwards;
+      fill: #E6EDF7;
+    }
+
+    .t-ro1 { animation: cycleReadout 12s infinite; }
+    .t-ro2 { animation: cycleReadout2 12s infinite; }
+    .t-ro3 { animation: cycleReadout3 12s infinite; }
+
+    .role-1 { animation: crossfadeRole1 16s infinite; }
+    .role-2 { animation: crossfadeRole2 16s infinite; }
+    .role-3 { animation: crossfadeRole3 16s infinite; }
+    .role-4 { animation: crossfadeRole4 16s infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .twinkle-1, .twinkle-2, .twinkle-3, .rot-ring, .beacon, .ship-anim,
+      .t-ro1, .t-ro2, .t-ro3, .role-1, .role-2, .role-3, .role-4 {
+        animation: none !important;
+      }
+      .path-name { stroke-dashoffset: 0 !important; fill-opacity: 1 !important; }
+      .role-1 { opacity: 1 !important; }
+      .role-2, .role-3, .role-4 { display: none; }
+    }
+  </style>
+
+  <!-- Background Base Canvas with Notched Corners -->
+  <path d="M 24,1 L 1176,1 L 1199,24 L 1199,536 L 1176,559 L 24,559 L 1,536 L 1,24 Z" class="bg-dock" stroke="#17233D" stroke-width="1.5"/>
+  <rect width="1200" height="560" class="sun-layer" pointer-events="none"/>
+
+  <!-- Faint Coordinate Grid Overlay -->
+  <g opacity="0.15">
+    <line x1="60" y1="1" x2="60" y2="559" stroke="#7C8BA8" stroke-width="0.8" stroke-dasharray="4,8"/>
+    <line x1="300" y1="1" x2="300" y2="559" stroke="#7C8BA8" stroke-width="0.8" stroke-dasharray="4,8"/>
+    <line x1="600" y1="1" x2="600" y2="559" stroke="#7C8BA8" stroke-width="0.8" stroke-dasharray="4,8"/>
+    <line x1="900" y1="1" x2="900" y2="559" stroke="#7C8BA8" stroke-width="0.8" stroke-dasharray="4,8"/>
+    <line x1="1" y1="140" x2="1199" y2="140" stroke="#7C8BA8" stroke-width="0.8" stroke-dasharray="4,8"/>
+    <line x1="1" y1="420" x2="1199" y2="420" stroke="#7C8BA8" stroke-width="0.8" stroke-dasharray="4,8"/>
+  </g>
+
+  <!-- Parallax Star Layers (3 Layers) -->
+  <g class="twinkle-1">
+    <circle cx="85" cy="65" r="2.2" class="star-point" filter="url(#starGlow)"/>
+    <circle cx="340" cy="110" r="1.8" class="star-point"/>
+    <circle cx="680" cy="80" r="2.5" class="signal-teal" filter="url(#starGlow)"/>
+    <circle cx="1060" cy="115" r="1.8" class="star-point"/>
+    <circle cx="190" cy="460" r="2.2" class="star-point"/>
+    <circle cx="540" cy="490" r="1.8" class="star-point"/>
+  </g>
+  <g class="twinkle-2">
+    <circle cx="160" cy="180" r="1.4" class="star-point"/>
+    <circle cx="490" cy="60" r="1.6" class="star-point"/>
+    <circle cx="790" cy="130" r="1.4" class="star-point"/>
+    <circle cx="1120" cy="440" r="1.6" class="star-point"/>
+    <circle cx="390" cy="380" r="1.2" class="star-point"/>
+  </g>
+  <g class="twinkle-3">
+    <circle cx="260" cy="85" r="2" fill="#8B5CF6"/>
+    <circle cx="610" cy="190" r="2.2" fill="#FFB547"/>
+    <circle cx="980" cy="70" r="1.8" class="signal-teal"/>
+    <circle cx="70" cy="360" r="1.6" class="star-point"/>
+  </g>
+
+  <!-- Orbit Track Arc -->
+  <path d="M -80,480 Q 450,160 1280,320" fill="none" stroke="#17233D" stroke-width="1.5" stroke-dasharray="6,8"/>
+  <path d="M -80,480 Q 450,160 1280,320" fill="none" stroke="#00F5D4" stroke-width="1.2" opacity="0.4"/>
+
+  <!-- Station Hub on Right (880, 280) -->
+  <g transform="translate(0, 0)">
+    <!-- Rotating Habitat Ring -->
+    <g class="rot-ring">
+      <circle cx="880" cy="280" r="135" fill="none" stroke="#17233D" stroke-width="2.5" stroke-dasharray="14,10"/>
+      <circle cx="880" cy="280" r="125" fill="none" stroke="#00F5D4" stroke-width="1.2" opacity="0.3"/>
+      <!-- Spoke Pods -->
+      <rect x="872" y="140" width="16" height="20" rx="3" fill="#111A2E" stroke="#8B5CF6" stroke-width="1.2"/>
+      <rect x="872" y="400" width="16" height="20" rx="3" fill="#111A2E" stroke="#8B5CF6" stroke-width="1.2"/>
+      <rect x="740" y="272" width="20" height="16" rx="3" fill="#111A2E" stroke="#00F5D4" stroke-width="1.2"/>
+      <rect x="1000" y="272" width="20" height="16" rx="3" fill="#111A2E" stroke="#00F5D4" stroke-width="1.2"/>
+    </g>
+
+    <!-- Central Core Station Structure -->
+    <circle cx="880" cy="280" r="62" class="station-body"/>
+    <circle cx="880" cy="280" r="44" fill="#070B14" stroke="#00F5D4" stroke-width="1.5"/>
+    <circle cx="880" cy="280" r="16" fill="#111A2E" stroke="#8B5CF6" stroke-width="1.5"/>
+    <circle cx="880" cy="280" r="5" class="signal-teal"/>
+
+    <!-- Station Docking Clamp Arm (pointing left toward 820, 280) -->
+    <path d="M 818,272 L 800,272 L 795,264 L 785,264 L 785,296 L 795,296 L 800,288 L 818,288 Z" fill="#17233D" stroke="#00F5D4" stroke-width="1.5"/>
+
+    <!-- Flashing Station Beacons -->
+    <g class="beacon">
+      <circle cx="880" cy="120" r="4" fill="#FFB547"/>
+      <circle cx="880" cy="440" r="4" fill="#FFB547"/>
+      <circle cx="785" cy="260" r="3" fill="#00F5D4"/>
+      <circle cx="785" cy="300" r="3" fill="#00F5D4"/>
+    </g>
+  </g>
+
+  <!-- Incoming Small Spacecraft -->
+  <g class="ship-anim">
+    <!-- Main Hull with Notched Armor -->
+    <polygon points="40,0 10,-14 -18,-14 -12,-4 -28,-18 -38,-14 -32,0 -38,14 -28,18 -12,4 -18,14 10,14" fill="#17233D" stroke="#00F5D4" stroke-width="1.5"/>
+    <!-- Cockpit Canopy -->
+    <polygon points="26,0 12,-5 2,-5 10,0 2,5 12,5" fill="#070B14" stroke="#00F5D4" stroke-width="1.2"/>
+    <!-- Engine Plasma Exhaust (Teal/Violet Glow) -->
+    <polygon points="-32,0 -46,-5 -58,0 -46,5" fill="#8B5CF6" opacity="0.8"/>
+    <polygon points="-32,0 -40,-3 -48,0 -40,3" fill="#00F5D4"/>
+    <!-- Navigation Lights -->
+    <circle cx="10" cy="-14" r="2" fill="#FFB547"/>
+    <circle cx="10" cy="14" r="2" fill="#00F5D4"/>
+  </g>
+
+  <!-- Top Left HUD Breadcrumb -->
+  <g transform="translate(48, 48)">
+    <path d="M 0,0 L 260,0 L 275,15 L 275,28 L 0,28 Z" class="hud-box"/>
+    <circle cx="16" cy="14" r="4" class="signal-teal"/>
+    <text x="30" y="18" class="font-mono" font-size="11" font-weight="700" fill="#00F5D4" letter-spacing="1.5">ORBITAL SECTOR // DOCK-01</text>
+  </g>
+
+  <!-- Top Right Readout: APPROACH, ALIGNING, DOCKED -->
+  <g transform="translate(930, 48)">
+    <path d="M 0,15 L 15,0 L 220,0 L 220,28 L 0,28 Z" class="hud-box"/>
+    <!-- Cycle states -->
+    <g class="t-ro1">
+      <circle cx="24" cy="14" r="4" fill="#FFB547"/>
+      <text x="38" y="18" class="font-mono" font-size="11" font-weight="700" fill="#FFB547" letter-spacing="1.2">STATUS: APPROACH</text>
+    </g>
+    <g class="t-ro2">
+      <circle cx="24" cy="14" r="4" fill="#8B5CF6"/>
+      <text x="38" y="18" class="font-mono" font-size="11" font-weight="700" fill="#8B5CF6" letter-spacing="1.2">STATUS: ALIGNING</text>
+    </g>
+    <g class="t-ro3">
+      <circle cx="24" cy="14" r="4" fill="#00F5D4"/>
+      <text x="38" y="18" class="font-mono" font-size="11" font-weight="700" fill="#00F5D4" letter-spacing="1.2">STATUS: DOCKED</text>
+    </g>
+  </g>
+
+  <!-- Hero Identity Statement (Center-Left) -->
+  <g transform="translate(64, 180)">
+    <!-- Sub-Callout with HUD Brackets -->
+    <path d="M 0,0 L 10,0 L 10,18 L 0,18" stroke="#00F5D4" stroke-width="2" fill="none"/>
+    <path d="M 180,0 L 170,0 L 170,18 L 180,18" stroke="#00F5D4" stroke-width="2" fill="none"/>
+    <text x="18" y="14" class="font-mono" font-size="11" font-weight="700" fill="#8B5CF6" letter-spacing="2">STATION COMMANDER</text>
+
+    <!-- Outlined Path Name Drawing In -->
+    <!-- T SHIVANESH KUMAR converted to vector glyph paths for universal render integrity -->
+    <g transform="translate(0, 40)">
+      <!-- Name Header rendered as precise vector letterforms -->
+      <!-- T -->
+      <path d="M 0,0 L 32,0 M 16,0 L 16,42" class="path-name" stroke-linecap="round"/>
+      <!-- S -->
+      <path d="M 68,10 C 68,2 45,2 45,12 C 45,26 68,24 68,34 C 68,44 44,44 44,34" class="path-name" stroke-linecap="round" fill="none"/>
+      <!-- H -->
+      <path d="M 82,2 L 82,42 M 82,22 L 104,22 M 104,2 L 104,42" class="path-name" stroke-linecap="round"/>
+      <!-- I -->
+      <path d="M 118,2 L 118,42" class="path-name" stroke-linecap="round"/>
+      <!-- V -->
+      <path d="M 132,2 L 146,42 L 160,2" class="path-name" stroke-linecap="round" fill="none"/>
+      <!-- A -->
+      <path d="M 170,42 L 184,2 L 198,42 M 175,28 L 193,28" class="path-name" stroke-linecap="round"/>
+      <!-- N -->
+      <path d="M 210,42 L 210,2 L 230,42 L 230,2" class="path-name" stroke-linecap="round"/>
+      <!-- E -->
+      <path d="M 258,2 L 242,2 L 242,42 L 258,42 M 242,22 L 254,22" class="path-name" stroke-linecap="round"/>
+      <!-- S -->
+      <path d="M 284,10 C 284,2 268,2 268,12 C 268,26 284,24 284,34 C 284,44 266,44 266,34" class="path-name" stroke-linecap="round" fill="none"/>
+      <!-- H -->
+      <path d="M 298,2 L 298,42 M 298,22 L 318,22 M 318,2 L 318,42" class="path-name" stroke-linecap="round"/>
+      <!-- K -->
+      <path d="M 346,2 L 346,42 M 366,2 L 346,22 L 368,42" class="path-name" stroke-linecap="round"/>
+      <!-- U -->
+      <path d="M 380,2 L 380,32 C 380,42 402,42 402,32 L 402,2" class="path-name" stroke-linecap="round" fill="none"/>
+      <!-- M -->
+      <path d="M 416,42 L 416,2 L 430,26 L 444,2 L 444,42" class="path-name" stroke-linecap="round"/>
+      <!-- A -->
+      <path d="M 456,42 L 470,2 L 484,42 M 461,28 L 479,28" class="path-name" stroke-linecap="round"/>
+      <!-- R -->
+      <path d="M 498,42 L 498,2 L 516,2 C 524,2 524,18 516,18 L 498,18 M 512,18 L 524,42" class="path-name" stroke-linecap="round"/>
+    </g>
+
+    <!-- Crossfading Rotating Role Line -->
+    <g transform="translate(0, 115)">
+      <text x="0" y="0" class="font-mono role-1" font-size="16" font-weight="600" fill="#00F5D4" letter-spacing="1">
+        &gt; CYBERSECURITY ENGINEER
+      </text>
+      <text x="0" y="0" class="font-mono role-2" font-size="16" font-weight="600" fill="#00F5D4" letter-spacing="1">
+        &gt; ANDROID DEVELOPER
+      </text>
+      <text x="0" y="0" class="font-mono role-3" font-size="16" font-weight="600" fill="#00F5D4" letter-spacing="1">
+        &gt; ML AND FULL STACK ENTHUSIAST (ACTIVELY LEARNING)
+      </text>
+      <text x="0" y="0" class="font-mono role-4" font-size="16" font-weight="600" fill="#00F5D4" letter-spacing="1">
+        &gt; OPEN SOURCE CONTRIBUTOR (ANDROGUARD &amp; OWASP)
+      </text>
+    </g>
+
+    <!-- Engineering Directive -->
+    <text x="0" y="152" class="font-mono text-dim" font-size="13">
+      System Internals · Reverse Engineering · Network Threat Forensics
+    </text>
+  </g>
+
+  <!-- Bottom HUD Corner Elements -->
+  <g transform="translate(64, 510)">
+    <line x1="0" y1="0" x2="24" y2="0" stroke="#00F5D4" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="-24" stroke="#00F5D4" stroke-width="2"/>
+    <text x="32" y="-6" class="font-mono text-dim" font-size="11">DOCKING INTERFACE READY // TELEMETRY LINKED</text>
+  </g>
+
+  <g transform="translate(1136, 510)">
+    <line x1="0" y1="0" x2="-24" y2="0" stroke="#00F5D4" stroke-width="2"/>
+    <line x1="0" y1="0" x2="0" y2="-24" stroke="#00F5D4" stroke-width="2"/>
+  </g>
+</svg>

@@ -1,45 +1,45 @@
-# Mission Control Profile Setup & Operations Manual
+# Mission Control Setup & Operations Manual
 
-This repository (`tshivaneshk/tshivaneshk`) powers your personal GitHub profile README through self-contained SVG modules and automated GitHub Actions.
+This repository (`tshivaneshk/tshivaneshk`) contains the complete space-themed Mission Control developer portfolio.
 
 ---
 
 ## 1. Required GitHub Settings
 
-To enable the automated workflows (3D City contribution generator, Pacman arcade graph, Crew Log updater, and Telemetry timestamp sync), ensure your repository workflow permissions are set to **Read and write permissions**:
+To enable the automated workflows (3D City Observatory generator, Comms Crew Log and Decryption Puzzle processor, and Daily Transmission synchronizer):
 
 1. Navigate to: `https://github.com/tshivaneshk/tshivaneshk/settings/actions`
 2. Scroll down to **Workflow permissions**.
 3. Select **Read and write permissions**.
-4. Check the box **Allow GitHub Actions to create and approve pull requests**.
+4. Check **Allow GitHub Actions to create and approve pull requests**.
 5. Click **Save**.
 
 ---
 
-## 2. Automated Workflows Overview
+## 2. Generating the 3D City Visualization
 
-| Workflow | File | Frequency | Output Target |
-|---|---|---|---|
-| **Contributions & City** | `.github/workflows/contributions.yml` | Daily @ 00:00 UTC, push to main, or manual dispatch | `output` branch (`profile-3d-contrib/*`, `pacman.svg`, `pacman-dark.svg`) |
-| **Crew Log Guestbook** | `.github/workflows/crew-log.yml` | Triggered when visitors open an issue with label `crew-log` | Directly patches the `<!-- CREW_LOG_START -->` section of `README.md` |
-| **Telemetry Sync** | `.github/workflows/update-timestamp.yml` | Every 6 hours | Updates UTC timestamp in `README.md` |
+The 3D contribution city is generated automatically on a daily schedule via `.github/workflows/contributions.yml` and committed to the `output` branch.
 
----
-
-## 3. Triggering the Initial Build
-
-You can trigger the 3D contribution and Pacman graph generation immediately from your terminal or the GitHub Actions tab:
+To trigger the first generation immediately:
 
 ```pwsh
 gh workflow run contributions.yml
 ```
 
-Once the run completes (approx. 1-2 minutes), the `output` branch will contain the visual files referenced by the README.
+Once the action completes, `profile-3d-contrib/profile-night-rainbow.svg` will be available in the `output` branch and render directly inside the Observatory module.
 
 ---
 
-## 4. Testing the Crew Log
+## 3. Interactive Visitor Features
 
-1. Click on the badge **TRANSMIT_LOG** or open an issue using the template at `.github/ISSUE_TEMPLATE/crew-log.yml`.
-2. Fill out the callsign and transmission message.
-3. Upon submission, the `crew-log.yml` workflow will automatically sanitize the input, update the README with the 5 latest entries, post a comment, and close the issue.
+### Crew Log
+- Visitors click **Sign the crew log** (`assets/sign-crew-log.svg`), which opens the issue form template in `.github/ISSUE_TEMPLATE/crew-log.yml`.
+- The `.github/workflows/comms-interaction.yml` workflow automatically sanitizes the transmission (strips HTML/links, enforces character limits), prepends it between `<!-- CREW_LOG_START -->` and `<!-- CREW_LOG_END -->` (keeping the latest 5 entries with UTC date), posts a confirmation comment, and closes the issue.
+
+### Intercepted Signal Puzzle
+- Visitors decode the Caesar-shifted and Base64-encoded transmission `RFJRUkhYRFVHQg==` (solution: `ANDROGUARD`).
+- Solvers submit their answer via `.github/ISSUE_TEMPLATE/signal-decode.yml`.
+- The workflow verifies the checksum, replies "Access granted. Welcome aboard.", and appends their handle to the `<!-- DECODED_BY_START -->` roster.
+
+### Daily Transmission
+- Powered by `.github/workflows/daily-transmission.yml`, which cycles through 40 original security/engineering one-liners stored in `data/transmissions.json` every 24 hours, updates `assets/transmission.svg`, and refreshes the UTC timestamp.

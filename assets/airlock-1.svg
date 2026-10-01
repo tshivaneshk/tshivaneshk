@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="100%" height="100%">
+  <defs>
+    <linearGradient id="doorBg1Dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111A2E"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+    <linearGradient id="doorBg1Light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DDE5F2"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .door-hull { fill: url(#doorBg1Dark); stroke: #17233D; stroke-width: 1.5; }
+    .door-panel { fill: #17233D; stroke: #00F5D4; stroke-width: 1.2; }
+    .txt-title { fill: #E6EDF7; font-weight: 700; }
+    .txt-sub { fill: #7C8BA8; }
+    .status-light { fill: #00F5D4; }
+
+    @media (prefers-color-scheme: light) {
+      .door-hull { fill: url(#doorBg1Light); stroke: #CBD5E1; }
+      .door-panel { fill: #F4F7FB; stroke: #00B89F; }
+      .txt-title { fill: #0F172A; }
+      .txt-sub { fill: #64748B; }
+      .status-light { fill: #00B89F; }
+    }
+
+    @keyframes pulseAir1 { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+    @keyframes scanLine1 { 0% { transform: translateY(0px); opacity: 0; } 50% { opacity: 0.8; } 100% { transform: translateY(120px); opacity: 0; } }
+
+    .pulse-l1 { animation: pulseAir1 2s infinite ease-in-out; }
+    .scan-l1 { animation: scanLine1 4s linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pulse-l1, .scan-l1 { animation: none !important; }
+    }
+  </style>
+
+  <!-- Door Frame with Notched Corners -->
+  <path d="M 16,1 L 284,1 L 299,16 L 299,134 L 284,149 L 16,149 L 1,134 L 1,16 Z" class="door-hull"/>
+
+  <!-- Scanning beam -->
+  <line x1="16" y1="16" x2="284" y2="16" stroke="#00F5D4" stroke-width="1.5" class="scan-l1"/>
+
+  <!-- Mechanical Airlock Door Seam -->
+  <line x1="150" y1="1" x2="150" y2="149" stroke="#17233D" stroke-width="2" stroke-dasharray="8,6"/>
+
+  <!-- Panel Center Console -->
+  <g transform="translate(30, 24)">
+    <!-- Header Indicator -->
+    <circle cx="8" cy="8" r="4.5" class="status-light pulse-l1"/>
+    <text x="20" y="12" class="font-mono" font-size="10" font-weight="700" fill="#00F5D4" letter-spacing="1.5">AIRLOCK 01</text>
+    <text x="180" y="12" class="font-mono" font-size="9.5" class="txt-sub">PRESSURIZED</text>
+
+    <!-- Destination Label -->
+    <text x="0" y="55" class="font-mono txt-title" font-size="20" letter-spacing="2">TERMINAL</text>
+    <text x="0" y="78" class="font-mono txt-sub" font-size="11">Access whoami console &amp; dossier</text>
+
+    <!-- Bottom Action Brackets -->
+    <path d="M 0,95 L 240,95" stroke="#17233D" stroke-width="1"/>
+    <text x="0" y="110" class="font-mono" font-size="10" font-weight="600" fill="#00F5D4">[ ENTER MODULE ↗ ]</text>
+  </g>
+</svg>

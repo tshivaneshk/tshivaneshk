@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shipBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111A2E"/>
+      <stop offset="100%" stop-color="#070B14"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .ship-hull { fill: url(#shipBg1); stroke: #17233D; stroke-width: 1.5; }
+    .txt-name { fill: #E6EDF7; font-weight: 700; font-size: 18px; }
+    .txt-desc { fill: #7C8BA8; font-size: 12.5px; line-height: 1.5; }
+    .txt-tag { fill: #00F5D4; font-size: 11px; font-weight: 600; }
+    .chip { fill: #17233D; stroke: #334155; }
+
+    @media (prefers-color-scheme: light) {
+      .ship-hull { fill: #FFFFFF; stroke: #CBD5E1; }
+      .txt-name { fill: #0F172A; }
+      .txt-desc { fill: #475569; }
+      .txt-tag { fill: #00B89F; }
+      .chip { fill: #F1F5F9; stroke: #CBD5E1; }
+    }
+
+    @keyframes bobVessel1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes scanBeam1 {
+      0%, 100% { opacity: 0.2; transform: scaleX(0.8); }
+      50% { opacity: 0.9; transform: scaleX(1.1); }
+    }
+
+    .vessel-bob { animation: bobVessel1 5.2s ease-in-out infinite; }
+    .beam-scan { animation: scanBeam1 2.8s ease-in-out infinite; transform-origin: 80px 70px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .vessel-bob, .beam-scan { animation: none !important; }
+    }
+  </style>
+
+  <!-- Vessel Pod Hull with Notched Corners -->
+  <path d="M 20,1 L 560,1 L 579,20 L 579,260 L 560,279 L 20,279 L 1,260 L 1,20 Z" class="ship-hull"/>
+
+  <!-- Left: Ship Silhouette Graphic (Distinct Forensics Cruiser with Radar Dish) -->
+  <g class="vessel-bob" transform="translate(30, 36)">
+    <!-- Radar Dish Beam -->
+    <path d="M 75,65 L 140,40 L 140,90 Z" fill="#00F5D4" opacity="0.15" class="beam-scan"/>
+    <!-- Cruiser Hull -->
+    <polygon points="120,65 95,45 35,45 20,55 10,55 5,65 10,75 20,75 35,85 95,85" fill="#17233D" stroke="#00F5D4" stroke-width="1.8"/>
+    <!-- Sensor Dome -->
+    <ellipse cx="65" cy="50" rx="14" ry="7" fill="#070B14" stroke="#00F5D4" stroke-width="1.2"/>
+    <circle cx="75" cy="65" r="4" fill="#00F5D4"/>
+    <!-- Engine Plasma Trail -->
+    <polygon points="5,65 -15,60 -25,65 -15,70" fill="#00F5D4" opacity="0.8"/>
+    <!-- Identification Plate -->
+    <text x="65" y="112" class="font-mono" font-size="9" fill="#00F5D4" text-anchor="middle" letter-spacing="1">VESSEL // FOR-01</text>
+  </g>
+
+  <!-- Right: Data Readout & Description -->
+  <g transform="translate(185, 42)">
+    <text x="0" y="20" class="font-mono txt-name">Android Security &amp; Forensics</text>
+    <line x1="0" y1="32" x2="360" y2="32" stroke="#17233D" stroke-width="1.2"/>
+
+    <!-- Verbatim fact description -->
+    <text x="0" y="60" class="font-mono txt-desc">
+      <tspan x="0" dy="0">Desktop platform interfacing over ADB for deep</tspan>
+      <tspan x="0" dy="19">static analysis, process monitoring, dynamic</tspan>
+      <tspan x="0" dy="19">socket inspection, and automated vulnerability</tspan>
+      <tspan x="0" dy="19">threat reporting.</tspan>
+    </text>
+
+    <!-- Chips -->
+    <g transform="translate(0, 160)">
+      <rect width="60" height="22" rx="4" class="chip"/>
+      <text x="30" y="15" class="font-mono txt-tag" text-anchor="middle">Python</text>
+
+      <rect x="68" width="45" height="22" rx="4" class="chip"/>
+      <text x="90.5" y="15" class="font-mono txt-tag" text-anchor="middle">ADB</text>
+
+      <rect x="121" width="115" height="22" rx="4" class="chip"/>
+      <text x="178.5" y="15" class="font-mono txt-tag" text-anchor="middle">Linux/Windows</text>
+    </g>
+  </g>
+</svg>

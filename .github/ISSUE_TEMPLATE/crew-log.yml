@@ -1,17 +1,16 @@
-name: Mission Control Crew Log
-description: Sign the mission visitor manifest or send a telemetry greeting
+name: Sign the Crew Log
+description: Log a message or transmission on the station flight manifest
 title: "[CREW LOG]: "
 labels: ["crew-log"]
 body:
   - type: markdown
     attributes:
-      value: |
-        Welcome to Mission Control! Leave a public transmission on the crew log.
+      value: "Leave a public transmission for the Mission Control station manifest."
   - type: input
     id: callsign
     attributes:
-      label: Crew Callsign / Name
-      description: What is your identifier or GitHub handle?
+      label: Crew Callsign
+      description: Your name or callsign (max 30 characters).
       placeholder: "e.g. Commander Alice"
     validations:
       required: true
@@ -19,7 +18,7 @@ body:
     id: transmission
     attributes:
       label: Mission Transmission
-      description: Share your message, feedback, or collaboration interest (plain text only).
-      placeholder: "e.g. Greetings from Sector 7! Great security tools."
+      description: Your message or greeting (plain text only, max 120 characters).
+      placeholder: "e.g. Clean telemetry readings from Sector 7."
     validations:
       required: true

@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="conDarkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14"/>
+      <stop offset="100%" stop-color="#111A2E"/>
+    </linearGradient>
+    <linearGradient id="conLightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F4F7FB"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .console-shell { fill: url(#conDarkBg); stroke: #17233D; stroke-width: 1.5; }
+    .console-bar { fill: #111A2E; stroke: #17233D; stroke-width: 1; }
+    .term-bg { fill: #070B14; stroke: #17233D; stroke-width: 1.2; }
+    .meter-panel { fill: #111A2E; stroke: #17233D; stroke-width: 1.2; }
+
+    .c-prompt { fill: #00F5D4; font-weight: 700; }
+    .c-cmd { fill: #E6EDF7; font-weight: 600; }
+    .c-out { fill: #7C8BA8; }
+    .c-text { fill: #E6EDF7; }
+    .c-tag { fill: #8B5CF6; }
+    .meter-lbl { fill: #7C8BA8; font-weight: 600; font-size: 11px; }
+
+    @media (prefers-color-scheme: light) {
+      .console-shell { fill: url(#conLightBg); stroke: #CBD5E1; }
+      .console-bar { fill: #DDE5F2; stroke: #CBD5E1; }
+      .term-bg { fill: #F8FAFC; stroke: #CBD5E1; }
+      .meter-panel { fill: #FFFFFF; stroke: #CBD5E1; }
+      .c-prompt { fill: #00B89F; }
+      .c-cmd { fill: #0F172A; }
+      .c-out { fill: #64748B; }
+      .c-text { fill: #0F172A; }
+      .c-tag { fill: #6D3FD6; }
+      .meter-lbl { fill: #334155; }
+    }
+
+    /* Looping session animations: reveal line-by-line, pause, clean, loop */
+    @keyframes sLineWhoami   { 0%, 2% { opacity: 0; } 4%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineAbout1   { 0%, 8% { opacity: 0; } 10%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineAbout2   { 0%, 14% { opacity: 0; } 16%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineAbout3   { 0%, 20% { opacity: 0; } 22%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineAbout4   { 0%, 26% { opacity: 0; } 28%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineProjects { 0%, 34% { opacity: 0; } 36%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineProj1    { 0%, 40% { opacity: 0; } 42%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineProj2    { 0%, 46% { opacity: 0; } 48%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineStack    { 0%, 54% { opacity: 0; } 56%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+    @keyframes sLineStackVal { 0%, 60% { opacity: 0; } 62%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+
+    @keyframes termCursor { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+    /* Oscillating meters without numbers */
+    @keyframes meterOsc1 { 0%, 100% { width: 50px; } 50% { width: 170px; } }
+    @keyframes meterOsc2 { 0%, 100% { width: 140px; } 50% { width: 40px; } }
+    @keyframes meterOsc3 { 0%, 100% { width: 80px; } 50% { width: 160px; } }
+    @keyframes meterOsc4 { 0%, 100% { width: 120px; } 50% { width: 60px; } }
+    @keyframes meterOsc5 { 0%, 100% { width: 45px; } 50% { width: 155px; } }
+
+    .l-whoami   { animation: sLineWhoami 20s infinite; }
+    .l-about1   { animation: sLineAbout1 20s infinite; }
+    .l-about2   { animation: sLineAbout2 20s infinite; }
+    .l-about3   { animation: sLineAbout3 20s infinite; }
+    .l-about4   { animation: sLineAbout4 20s infinite; }
+    .l-projects { animation: sLineProjects 20s infinite; }
+    .l-proj1    { animation: sLineProj1 20s infinite; }
+    .l-proj2    { animation: sLineProj2 20s infinite; }
+    .l-stack    { animation: sLineStack 20s infinite; }
+    .l-stackval { animation: sLineStackVal 20s infinite; }
+
+    .cursor-box { animation: termCursor 0.8s infinite; }
+
+    .m-bar1 { animation: meterOsc1 4.2s ease-in-out infinite; }
+    .m-bar2 { animation: meterOsc2 3.6s ease-in-out infinite; }
+    .m-bar3 { animation: meterOsc3 5.1s ease-in-out infinite; }
+    .m-bar4 { animation: meterOsc4 3.9s ease-in-out infinite; }
+    .m-bar5 { animation: meterOsc5 4.7s ease-in-out infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .l-whoami, .l-about1, .l-about2, .l-about3, .l-about4,
+      .l-projects, .l-proj1, .l-proj2, .l-stack, .l-stackval {
+        opacity: 1 !important;
+        animation: none !important;
+      }
+      .cursor-box, .m-bar1, .m-bar2, .m-bar3, .m-bar4, .m-bar5 {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <!-- Shell Frame with Notched Corners -->
+  <path d="M 20,1 L 1180,1 L 1199,20 L 1199,500 L 1180,519 L 20,519 L 1,500 L 1,20 Z" class="console-shell"/>
+
+  <!-- Top Title Bar -->
+  <path d="M 1,20 L 20,1 L 1180,1 L 1199,20 L 1199,44 L 1,44 Z" class="console-bar"/>
+  <circle cx="28" cy="22" r="5" fill="#EF4444" opacity="0.8"/>
+  <circle cx="44" cy="22" r="5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="60" cy="22" r="5" fill="#10B981" opacity="0.8"/>
+  <text x="600" y="27" class="font-mono c-out" font-size="11.5" text-anchor="middle" letter-spacing="1">CONSOLE // FLIGHT_LOG_TERMINAL [SEC_CONSOLE_V2]</text>
+
+  <!-- LEFT: Interactive Terminal Window (x=24, y=60, w=850, h=436) -->
+  <rect x="24" y="60" width="850" height="436" rx="8" class="term-bg"/>
+
+  <g transform="translate(48, 96)">
+    <!-- 1. whoami -->
+    <g class="l-whoami">
+      <text x="0" y="0" class="font-mono" font-size="13">
+        <tspan class="c-prompt">commander@station:~$</tspan> <tspan class="c-cmd">whoami</tspan>
+      </text>
+      <text x="0" y="22" class="font-mono c-text" font-size="12.5">
+        T Shivanesh Kumar — Cybersecurity Engineer &amp; Android Developer
+      </text>
+    </g>
+
+    <!-- 2. cat about.txt (Verbatim wording revealed in short lines) -->
+    <g class="l-about1" transform="translate(0, 56)">
+      <text x="0" y="0" class="font-mono" font-size="13">
+        <tspan class="c-prompt">commander@station:~$</tspan> <tspan class="c-cmd">cat about.txt</tspan>
+      </text>
+      <text x="0" y="22" class="font-mono c-out" font-size="12">
+        Cybersecurity Engineer and Android Developer passionate about system-level security,
+      </text>
+    </g>
+    <g class="l-about2" transform="translate(0, 96)">
+      <text x="0" y="0" class="font-mono c-out" font-size="12">
+        reverse engineering, and building resilient software, specializing in Android security internals,
+      </text>
+    </g>
+    <g class="l-about3" transform="translate(0, 116)">
+      <text x="0" y="0" class="font-mono c-out" font-size="12">
+        static/dynamic APK inspection, and network intrusion analysis, while actively expanding into
+      </text>
+    </g>
+    <g class="l-about4" transform="translate(0, 136)">
+      <text x="0" y="0" class="font-mono c-out" font-size="12">
+        modern Front End Development and contributing upstream to open-source security tools.
+      </text>
+    </g>
+
+    <!-- 3. ls projects/ -->
+    <g class="l-projects" transform="translate(0, 186)">
+      <text x="0" y="0" class="font-mono" font-size="13">
+        <tspan class="c-prompt">commander@station:~$</tspan> <tspan class="c-cmd">ls projects/</tspan>
+      </text>
+    </g>
+    <g class="l-proj1" transform="translate(0, 208)">
+      <text x="0" y="0" class="font-mono" font-size="12">
+        <tspan class="c-tag">android-forensics/</tspan>    <tspan class="c-tag">wolfsniff-ids/</tspan>
+      </text>
+    </g>
+    <g class="l-proj2" transform="translate(0, 228)">
+      <text x="0" y="0" class="font-mono" font-size="12">
+        <tspan class="c-tag">alphastick-audit/</tspan>     <tspan class="c-tag">upstream-androguard-owasp/</tspan>
+      </text>
+    </g>
+
+    <!-- 4. cat stack.txt -->
+    <g class="l-stack" transform="translate(0, 276)">
+      <text x="0" y="0" class="font-mono" font-size="13">
+        <tspan class="c-prompt">commander@station:~$</tspan> <tspan class="c-cmd">cat stack.txt</tspan>
+      </text>
+    </g>
+    <g class="l-stackval" transform="translate(0, 298)">
+      <text x="0" y="0" class="font-mono c-out" font-size="12">
+        python · kotlin · c · cpp · ts · js · html · css · linux · bash · git · scikitlearn · wireshark
+      </text>
+    </g>
+
+    <!-- Interactive Cursor -->
+    <g transform="translate(0, 340)">
+      <text x="0" y="0" class="font-mono" font-size="13">
+        <tspan class="c-prompt">commander@station:~$</tspan>
+      </text>
+      <rect x="200" y="-12" width="9" height="16" fill="#00F5D4" class="cursor-box"/>
+    </g>
+  </g>
+
+  <!-- RIGHT: Telemetry Oscillating Meters Panel (x=892, y=60, w=284, h=436) -->
+  <g transform="translate(892, 60)">
+    <rect width="284" height="436" rx="8" class="meter-panel"/>
+
+    <!-- Header -->
+    <text x="24" y="36" class="font-mono" font-size="12" font-weight="700" fill="#00F5D4" letter-spacing="1.5">TELEMETRY VECTORS</text>
+    <line x1="24" y1="48" x2="260" y2="48" stroke="#17233D" stroke-width="1.2"/>
+
+    <!-- Meter 1: Android -->
+    <g transform="translate(24, 76)">
+      <text x="0" y="0" class="font-mono meter-lbl">android</text>
+      <rect x="0" y="8" width="236" height="12" rx="3" fill="#070B14" stroke="#17233D"/>
+      <rect x="0" y="8" height="12" rx="3" fill="#00F5D4" class="m-bar1"/>
+    </g>
+
+    <!-- Meter 2: Network -->
+    <g transform="translate(24, 142)">
+      <text x="0" y="0" class="font-mono meter-lbl">network</text>
+      <rect x="0" y="8" width="236" height="12" rx="3" fill="#070B14" stroke="#17233D"/>
+      <rect x="0" y="8" height="12" rx="3" fill="#8B5CF6" class="m-bar2"/>
+    </g>
+
+    <!-- Meter 3: Reversing -->
+    <g transform="translate(24, 208)">
+      <text x="0" y="0" class="font-mono meter-lbl">reversing</text>
+      <rect x="0" y="8" width="236" height="12" rx="3" fill="#070B14" stroke="#17233D"/>
+      <rect x="0" y="8" height="12" rx="3" fill="#FFB547" class="m-bar3"/>
+    </g>
+
+    <!-- Meter 4: Frontend -->
+    <g transform="translate(24, 274)">
+      <text x="0" y="0" class="font-mono meter-lbl">frontend</text>
+      <rect x="0" y="8" width="236" height="12" rx="3" fill="#070B14" stroke="#17233D"/>
+      <rect x="0" y="8" height="12" rx="3" fill="#00F5D4" class="m-bar4"/>
+    </g>
+
+    <!-- Meter 5: ML -->
+    <g transform="translate(24, 340)">
+      <text x="0" y="0" class="font-mono meter-lbl">ml</text>
+      <rect x="0" y="8" width="236" height="12" rx="3" fill="#070B14" stroke="#17233D"/>
+      <rect x="0" y="8" height="12" rx="3" fill="#8B5CF6" class="m-bar5"/>
+    </g>
+
+    <!-- Bottom Readout -->
+    <text x="24" y="412" class="font-mono c-out" font-size="10">SYS // OSCILLATION NOMINAL</text>
+  </g>
+</svg>

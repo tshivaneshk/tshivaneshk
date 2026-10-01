@@ -1,8 +1,7 @@
-name: Generate 3D Contribution City
+name: Generate Observatory Contributions
 
 on:
   schedule:
-    # Run once daily at 00:00 UTC
     - cron: "0 0 * * *"
   workflow_dispatch:
   push:

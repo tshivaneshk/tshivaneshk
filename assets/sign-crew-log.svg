@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" width="200" height="48">
+  <defs>
+    <linearGradient id="btnDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17233D"/>
+      <stop offset="100%" stop-color="#111A2E"/>
+    </linearGradient>
+    <linearGradient id="btnLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#DDE5F2"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .btn-hull { fill: url(#btnDark); stroke: #00F5D4; stroke-width: 1.5; }
+    .btn-text { fill: #00F5D4; font-size: 11px; font-weight: 700; letter-spacing: 1.2; text-anchor: middle; dominant-baseline: middle; }
+
+    @media (prefers-color-scheme: light) {
+      .btn-hull { fill: url(#btnLight); stroke: #00B89F; }
+      .btn-text { fill: #00B89F; }
+    }
+
+    @keyframes pulseGlowBtn { 0%, 100% { stroke-opacity: 0.6; } 50% { stroke-opacity: 1; } }
+    .btn-hull { animation: pulseGlowBtn 2.4s infinite ease-in-out; }
+  </style>
+
+  <path d="M 12,1 L 188,1 L 199,12 L 199,36 L 188,47 L 12,47 L 1,36 L 1,12 Z" class="btn-hull"/>
+  <text x="100" y="24" class="font-mono btn-text">Sign the crew log ↗</text>
+</svg>

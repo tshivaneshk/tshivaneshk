@@ -1,0 +1,134 @@
+name: Process Comms Interactions
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  handle-interaction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Process Issue Interaction
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issue = context.payload.issue;
+            if (!issue) return;
+
+            const labels = (issue.labels || []).map(l => l.name);
+            const body = issue.body || '';
+            const user = issue.user ? issue.user.login : 'anonymous';
+            const readmePath = 'README.md';
+            let readme = fs.readFileSync(readmePath, 'utf8');
+
+            const blocklist = ['spam', 'abuse', 'http', 'https', '<script', 'eval', 'select', 'drop'];
+
+            // 1. Handle Crew Log
+            if (labels.includes('crew-log')) {
+              // Sanitize inputs
+              const sanitized = body
+                .replace(/<[^>]*>?/gm, '')
+                .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+                .replace(/\r?\n|\r/g, ' ')
+                .trim();
+
+              const containsBlocked = blocklist.some(w => sanitized.toLowerCase().includes(w));
+              if (!containsBlocked && sanitized.length > 0) {
+                const cleanMsg = sanitized.slice(0, 120);
+                const utcDate = new Date().toISOString().slice(0, 10);
+                const newEntry = `- **@${user}**: "${cleanMsg}" (${utcDate})`;
+
+                const startTag = '<!-- CREW_LOG_START -->';
+                const endTag = '<!-- CREW_LOG_END -->';
+                const sIdx = readme.indexOf(startTag);
+                const eIdx = readme.indexOf(endTag);
+
+                if (sIdx !== -1 && eIdx !== -1) {
+                  let existing = readme.substring(sIdx + startTag.length, eIdx).trim();
+                  let lines = existing.split('\n').filter(l => l.startsWith('- **@'));
+                  lines.unshift(newEntry);
+                  lines = lines.slice(0, 5); // max 5 entries
+
+                  const replacement = `${startTag}\n${lines.join('\n')}\n${endTag}`;
+                  readme = readme.substring(0, sIdx) + replacement + readme.substring(eIdx + endTag.length);
+                  fs.writeFileSync(readmePath, readme, 'utf8');
+                }
+              }
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: 'Transmission logged in Mission Control flight log. Station acknowledged.'
+              });
+
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+            }
+
+            // 2. Handle Signal Decode Puzzle
+            if (labels.includes('signal-decode')) {
+              const expectedSolution = 'ANDROGUARD';
+              const isCorrect = body.toUpperCase().includes(expectedSolution);
+
+              if (isCorrect) {
+                const startTag = '<!-- DECODED_BY_START -->';
+                const endTag = '<!-- DECODED_BY_END -->';
+                const sIdx = readme.indexOf(startTag);
+                const eIdx = readme.indexOf(endTag);
+
+                if (sIdx !== -1 && eIdx !== -1) {
+                  let existing = readme.substring(sIdx + startTag.length, eIdx).trim();
+                  let handles = existing ? existing.split(',').map(h => h.trim()).filter(h => h.length > 0) : [];
+                  const userHandle = `@${user}`;
+                  if (!handles.includes(userHandle)) {
+                    handles.unshift(userHandle);
+                    handles = handles.slice(0, 10);
+                  }
+                  const replacement = `${startTag}${handles.join(', ')}<!-- DECODED_BY_END -->`;
+                  readme = readme.substring(0, sIdx) + replacement + readme.substring(eIdx + endTag.length);
+                  fs.writeFileSync(readmePath, readme, 'utf8');
+                }
+
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: 'Access granted. Welcome aboard.'
+                });
+              } else {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: 'Signal parity error. Decryption checksum failed.'
+                });
+              }
+
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed'
+              });
+            }
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: record station transmission" && git push origin main)
