@@ -149,11 +149,7 @@
         <tspan class="c-tag">android-forensics/</tspan>    <tspan class="c-tag">wolfsniff-ids/</tspan>
       </text>
     </g>
-    <g class="l-proj2" transform="translate(0, 228)">
-      <text x="0" y="0" class="font-mono" font-size="12">
-        <tspan class="c-tag">alphastick-audit/</tspan>     <tspan class="c-tag">upstream-androguard-owasp/</tspan>
-      </text>
-    </g>
+
 
     <!-- 4. cat stack.txt -->
     <g class="l-stack" transform="translate(0, 276)">
