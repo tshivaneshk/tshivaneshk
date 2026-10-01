@@ -1,8 +1,18 @@
 <div align="center">
 
-<img src="./assets/signature-brand.svg" alt="SHIVA" width="100%" />
+<img src="./assets/signature-brand.svg" alt="T Shivanesh Kumar" width="100%" />
+
+<br/>
+
+[![Portfolio](https://img.shields.io/badge/PORTFOLIO-0A0D14?style=for-the-badge&logo=vercel&logoColor=38bdf8&labelColor=020617)](https://portfolio-rho-sooty-uwjqzmzrhi.vercel.app/)
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A0D14?style=for-the-badge&logo=linkedin&logoColor=38bdf8&labelColor=020617)](https://www.linkedin.com/in/tshivaneshk/)
+&nbsp;
+[![Repositories](https://img.shields.io/badge/REPOSITORIES-0A0D14?style=for-the-badge&logo=github&logoColor=38bdf8&labelColor=020617)](https://github.com/tshivaneshk?tab=repositories)
 
 </div>
+
+<br/>
 
 I am an engineer focused on **security research and software systems**. Most of my work sits at the intersection of Android internals, binary reverse engineering, and defensive tooling—motivated by understanding how software behaves under conditions its authors didn't anticipate.
 
@@ -38,17 +48,20 @@ I am an engineer focused on **security research and software systems**. Most of 
 
 ---
 
-### Technologies
+### Contribution Stream
 
-```text
-Languages     Python · Kotlin · C / C++ · Rust
-Systems       Android (AOSP/Internals) · Linux · ADB · Git · Docker
-Security      Ghidra · Frida · JADX · APKTool · Androguard · Wireshark
-Full Stack    TypeScript · React · Next.js (Actively Expanding)
-```
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg">
+  <img alt="Contribution Snake Stream" src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg" width="100%" />
+</picture>
+
+</div>
 
 ---
 
-### Connect
-
-[Portfolio](https://portfolio-rho-sooty-uwjqzmzrhi.vercel.app/) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/tshivaneshk/) &nbsp;·&nbsp; [Repositories](https://github.com/tshivaneshk?tab=repositories)
+<div align="center">
+  <sub>Engineered by <strong>T Shivanesh Kumar</strong></sub>
+</div>

@@ -1,61 +1,136 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 130" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 180" width="100%" height="100%">
   <defs>
-    <!-- Background Linear Gradient -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#0a0c10"/>
-      <stop offset="60%" stop-color="#08090d"/>
-      <stop offset="100%" stop-color="#050608"/>
+    <!-- Dark glassmorphic background -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="50%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#04060a"/>
     </linearGradient>
 
-    <!-- Subtle Cyan Accent Glow -->
-    <radialGradient id="glow" cx="12%" cy="40%" r="50%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    <!-- 3D Bevel Highlight Gradient -->
+    <linearGradient id="bevelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="25%" stop-color="#60a5fa" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#1e293b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Outer 3D Deep Shadow -->
+    <filter id="shadow3D" x="-10%" y="-15%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0284c7" flood-opacity="0.15"/>
+    </filter>
+
+    <!-- Subtle Cyan Ambient Radial Glow -->
+    <radialGradient id="cyanAmbient" cx="90%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
     </radialGradient>
+
+    <!-- Linear Gradient for Name Title -->
+    <linearGradient id="titleTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#93c5fd"/>
+    </linearGradient>
+
+    <!-- Grid lines pattern -->
+    <pattern id="grid3D" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.35"/>
+    </pattern>
   </defs>
 
   <style>
-    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
-    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-    
-    @keyframes blink {
-      0%, 45% { opacity: 1; }
-      50%, 95% { opacity: 0; }
-      100% { opacity: 1; }
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=JetBrains+Mono:wght@400;600&amp;family=Inter:wght@400;500&amp;display=swap');
+
+    .title-font {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .mono-font {
+      font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .body-font {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
-    @keyframes pulseSoft {
-      0%, 100% { opacity: 0.9; }
-      50% { opacity: 0.35; }
+    @keyframes liveGlow {
+      0%, 100% { opacity: 0.9; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
     }
 
-    .cursor { animation: blink 1.1s steps(1) infinite; }
-    .status-dot { animation: pulseSoft 2.4s ease-in-out infinite; }
+    @keyframes beamSweep {
+      0% { transform: translateX(-400px); }
+      100% { transform: translateX(920px); }
+    }
+
+    .pulse-dot {
+      animation: liveGlow 2.5s ease-in-out infinite;
+      transform-origin: 52px 145px;
+    }
+
+    .top-reflection {
+      animation: beamSweep 7s ease-in-out infinite;
+    }
   </style>
 
-  <!-- Background Panel -->
-  <rect width="798" height="128" x="1" y="1" rx="8" fill="url(#bg)" stroke="#1e232d" stroke-width="1"/>
-  <rect width="798" height="128" x="1" y="1" rx="8" fill="url(#glow)"/>
+  <!-- 3D Card Base with Shadow -->
+  <g filter="url(#shadow3D)">
+    <rect width="916" height="176" x="2" y="2" rx="14" fill="url(#cardGrad)"/>
+    <rect width="916" height="176" x="2" y="2" rx="14" fill="url(#cyanAmbient)"/>
+    <rect width="916" height="176" x="2" y="2" rx="14" fill="url(#grid3D)"/>
+    
+    <!-- 3D Bevel Inset Stroke -->
+    <rect width="916" height="176" x="2" y="2" rx="14" fill="none" stroke="url(#bevelGrad)" stroke-width="1.5"/>
+  </g>
 
-  <!-- Left Status Indicator Bar -->
-  <line x1="1" y1="24" x2="1" y2="104" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Glass Top Edge Light Reflection -->
+  <g clip-path="url(#edgeClip)">
+    <clipPath id="edgeClip">
+      <rect width="916" height="176" x="2" y="2" rx="14"/>
+    </clipPath>
+    <line x1="0" y1="2" x2="300" y2="2" stroke="#ffffff" stroke-width="2" stroke-opacity="0.6" class="top-reflection"/>
+  </g>
 
-  <!-- Brand Signature Header -->
-  <g transform="translate(36, 56)">
-    <text x="0" y="0" class="mono" font-size="34" font-weight="800" fill="#f8fafc" letter-spacing="-0.5">SHIVA</text>
-    <rect x="122" y="-27" width="9" height="30" fill="#38bdf8" class="cursor"/>
+  <!-- Left 3D Neon Accent Blade -->
+  <rect x="2" y="30" width="3.5" height="116" rx="2" fill="#38bdf8"/>
+  <rect x="2" y="45" width="2" height="86" rx="1" fill="#ffffff" opacity="0.8"/>
 
-    <!-- Subtle Tagline -->
-    <text x="146" y="-7" class="mono" font-size="13" font-weight="500" fill="#64748b" letter-spacing="1.2">
-      // SYSTEMS &amp; DEFENSIVE SECURITY
+  <!-- Main Content Layout -->
+  <!-- Top Telemetry Pill -->
+  <g transform="translate(48, 38)">
+    <rect width="270" height="24" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+    <text x="14" y="16" class="mono-font" font-size="10.5" font-weight="600" fill="#38bdf8" letter-spacing="1.4">SYSTEMS × SECURITY ARCHITECTURE</text>
+  </g>
+
+  <!-- Full Name with 3D Depth Treatment -->
+  <g transform="translate(48, 102)">
+    <text x="0" y="0" class="title-font" font-size="34" font-weight="800" fill="url(#titleTextGrad)" letter-spacing="-0.8">T Shivanesh Kumar</text>
+    <!-- Role Subheading in Mixed Monospace Font -->
+    <text x="390" y="-4" class="mono-font" font-size="13" font-weight="600" fill="#64748b" letter-spacing="0.5">// Cybersecurity &amp; Android</text>
+  </g>
+
+  <!-- Divider Line with Glow Accent -->
+  <line x1="48" y1="124" x2="865" y2="124" stroke="#1e293b" stroke-width="1"/>
+  <line x1="48" y1="124" x2="160" y2="124" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.8"/>
+
+  <!-- Bottom Core Statement with Pulse Indicator -->
+  <g transform="translate(48, 148)">
+    <circle cx="5" cy="-4" r="3.5" fill="#10b981" class="pulse-dot"/>
+    <text x="20" y="0" class="body-font" font-size="13.5" font-weight="400" fill="#94a3b8">
+      Building software, taking it apart to see why it fails, and engineering what holds.
     </text>
   </g>
 
-  <!-- Personal Positioning Line -->
-  <g transform="translate(36, 92)">
-    <circle cx="4" cy="-4" r="3" fill="#10b981" class="status-dot"/>
-    <text x="16" y="0" class="sans" font-size="13.5" fill="#94a3b8">
-      Building software, taking it apart to see why it fails, and engineering what holds.
-    </text>
+  <!-- 3D Geometric Cube / Minimal Wireframe Accent on the Right -->
+  <g transform="translate(830, 72)" stroke="#38bdf8" stroke-width="1.2" fill="none" opacity="0.45">
+    <!-- Isometric Top Face -->
+    <polygon points="0,-24 24,-12 0,0 -24,-12" fill="#38bdf8" fill-opacity="0.08"/>
+    <!-- Isometric Left Face -->
+    <polygon points="-24,-12 0,0 0,24 -24,12" fill="#0284c7" fill-opacity="0.04"/>
+    <!-- Isometric Right Face -->
+    <polygon points="0,0 24,-12 24,12 0,24" fill="#0369a1" fill-opacity="0.12"/>
+    <!-- Inner Axis Lines -->
+    <circle cx="0" cy="0" r="2.5" fill="#38bdf8"/>
   </g>
 </svg>
