@@ -73,12 +73,11 @@
   <text x="36" y="165" class="font-mono txt-plate">VESSEL // FOR-01</text>
   <line x1="36" y1="175" x2="564" y2="175" stroke="#17233D" stroke-width="1.5"/>
 
-  <!-- BOTTOM HALF: Title + Link Arrow + Description + Chips -->
   <!-- Title with hand-drawn SVG Arrow -->
   <g transform="translate(36, 210)">
-    <text x="0" y="0" class="font-sans txt-title">Android Security &amp; Forensics</text>
+    <text x="0" y="0" class="font-sans txt-title">Android Security &amp; Forensics <tspan fill="#FFB547" font-size="18px" font-weight="600">(On Going)</tspan></text>
     <!-- Link Arrow Path -->
-    <g transform="translate(420, -18)">
+    <g transform="translate(500, -18)">
       <path d="M 0,16 L 16,0 M 4,0 L 16,0 L 16,12" class="arrow-pth"/>
     </g>
   </g>
