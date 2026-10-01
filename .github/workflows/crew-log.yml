@@ -1,0 +1,96 @@
+name: Update Crew Log
+
+on:
+  issues:
+    types: [opened, edited]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  update-crew-log:
+    if: contains(github.event.issue.labels.*.name, 'crew-log')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Process Crew Log Issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Fetch recently closed/opened crew-log issues
+            const issues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'crew-log',
+              state: 'all',
+              per_page: 5,
+              sort: 'created',
+              direction: 'desc'
+            });
+
+            let entries = [];
+            for (const issue of issues.data) {
+              const body = issue.body || '';
+              // Extract fields or sanitize plain body
+              const user = issue.user ? issue.user.login : 'anonymous';
+              const cleanTitle = issue.title.replace('[CREW LOG]:', '').trim() || 'Log transmission';
+              
+              // Basic sanitization: strip HTML tags and markdown links
+              const sanitizedBody = body
+                .replace(/<[^>]*>?/gm, '')
+                .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+                .replace(/\r?\n|\r/g, ' ')
+                .slice(0, 140)
+                .trim();
+
+              entries.push(`- **@${user}**: "${sanitizedBody || cleanTitle}"`);
+            }
+
+            if (entries.length === 0) {
+              entries.push('- *No crew transmissions logged yet. Be the first to transmit!*');
+            }
+
+            const readmePath = 'README.md';
+            let readme = fs.readFileSync(readmePath, 'utf8');
+
+            const startTag = '<!-- CREW_LOG_START -->';
+            const endTag = '<!-- CREW_LOG_END -->';
+
+            const startIndex = readme.indexOf(startTag);
+            const endIndex = readme.indexOf(endTag);
+
+            if (startIndex !== -1 && endIndex !== -1) {
+              const newContent = `${startTag}\n${entries.join('\n')}\n${endTag}`;
+              readme = readme.substring(0, startIndex) + newContent + readme.substring(endIndex + endTag.length);
+              fs.writeFileSync(readmePath, readme, 'utf8');
+            }
+
+            // Close the processed issue with a thank you note
+            if (context.payload.issue && context.payload.issue.state === 'open') {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                body: 'Transmission logged in Mission Control README. Thank you, crew!'
+              });
+
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                state: 'closed'
+              });
+            }
+
+      - name: Commit and push updated README
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update mission crew log" && git push origin main)
