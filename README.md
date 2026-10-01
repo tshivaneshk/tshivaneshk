@@ -1,8 +1,10 @@
 <div align="center">
 
-# T Shivanesh Kumar
+<img src="./assets/space-header.svg" alt="Floating in Space" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fredoka&weight=700&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=620&lines=Cybersecurity+Engineer+%26+Android+Developer+✨;ML+%26+Full+Stack+Enthusiast+(Actively+Learning)+🚀;Actively+learning+Front+End+Development+🎨;Open+Source+Contributor+%40+Androguard+%26+OWASP+⭐)](https://git.io/typing-svg)
+# 🚀 T Shivanesh Kumar 🪐
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fredoka&weight=700&size=22&pause=1000&color=00F5D4&center=true&vCenter=true&width=620&lines=Cybersecurity+Engineer+%26+Android+Developer+✨;ML+%26+Full+Stack+Enthusiast+(Actively+Learning)+🛸;Open+Source+Contributor+⭐)](https://git.io/typing-svg)
 
 <br/>
 
@@ -12,11 +14,13 @@
 &nbsp;
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tshivaneshk)
 
-<br/><br/>
+<br/>
+
+<img src="./assets/space-divider.svg" alt="Space Orbit" width="100%" />
 
 </div>
 
-## About Me
+## 🛸 About Me
 
 Cybersecurity Engineer and Android Developer passionate about system-level security, reverse engineering, and building resilient software—specializing in Android security internals, static/dynamic APK inspection, and network intrusion analysis, while actively expanding into modern Front End Development and contributing upstream to open-source security tools.
 
@@ -26,9 +30,13 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=tshivaneshk&theme=tokyonight&hide_border=true&background=0D1117&ring=00f5d4&fire=00f5d4&currStreakLabel=00f5d4" alt="GitHub Streak" />
 </div>
 
----
+<br/>
 
-## Projects, Contributions & Activity
+<div align="center">
+  <img src="./assets/space-divider.svg" alt="Space Orbit" width="100%" />
+</div>
+
+## 🌌 Projects, Contributions & Activity
 
 <div align="center">
   <img src="./assets/cards-row1.svg" alt="Android Forensics & Wolfsniff" width="100%" />
@@ -45,9 +53,13 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
   </picture>
 </div>
 
----
+<br/>
 
-## Tech Stack
+<div align="center">
+  <img src="./assets/space-divider.svg" alt="Space Orbit" width="100%" />
+</div>
+
+## 🎮 Tech Stack
 
 <div align="center">
 
@@ -57,8 +69,10 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
 
 </div>
 
+<br/>
+
 ---
 
 <div align="center">
-  <sub>Built by <a href="https://github.com/tshivaneshk">T Shivanesh Kumar</a></sub>
+  <sub>🛸 Floating through code by <a href="https://github.com/tshivaneshk">T Shivanesh Kumar</a> ✨</sub>
 </div>
