@@ -39,43 +39,324 @@
       .core-inner { fill: #00B89F; }
     }
 
-    /* Rings rotation */
-    @keyframes orbitClockwise {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    @keyframes anim-py {
+      0.0% { transform: translate(600.0px, 175.0px); }
+      6.3% { transform: translate(640.2px, 183.0px); }
+      12.5% { transform: translate(674.2px, 205.8px); }
+      18.8% { transform: translate(697.0px, 239.8px); }
+      25.0% { transform: translate(705.0px, 280.0px); }
+      31.3% { transform: translate(697.0px, 320.2px); }
+      37.5% { transform: translate(674.2px, 354.2px); }
+      43.8% { transform: translate(640.2px, 377.0px); }
+      50.0% { transform: translate(600.0px, 385.0px); }
+      56.3% { transform: translate(559.8px, 377.0px); }
+      62.5% { transform: translate(525.8px, 354.2px); }
+      68.8% { transform: translate(503.0px, 320.2px); }
+      75.0% { transform: translate(495.0px, 280.0px); }
+      81.3% { transform: translate(503.0px, 239.8px); }
+      87.5% { transform: translate(525.8px, 205.8px); }
+      93.8% { transform: translate(559.8px, 183.0px); }
+      100.0% { transform: translate(600.0px, 175.0px); }
     }
-    @keyframes orbitCounterClockwise {
-      0% { transform: rotate(360deg); }
-      100% { transform: rotate(0deg); }
+    @keyframes anim-kt {
+      0.0% { transform: translate(705.0px, 280.0px); }
+      6.3% { transform: translate(697.0px, 320.2px); }
+      12.5% { transform: translate(674.2px, 354.2px); }
+      18.8% { transform: translate(640.2px, 377.0px); }
+      25.0% { transform: translate(600.0px, 385.0px); }
+      31.3% { transform: translate(559.8px, 377.0px); }
+      37.5% { transform: translate(525.8px, 354.2px); }
+      43.8% { transform: translate(503.0px, 320.2px); }
+      50.0% { transform: translate(495.0px, 280.0px); }
+      56.3% { transform: translate(503.0px, 239.8px); }
+      62.5% { transform: translate(525.8px, 205.8px); }
+      68.8% { transform: translate(559.8px, 183.0px); }
+      75.0% { transform: translate(600.0px, 175.0px); }
+      81.3% { transform: translate(640.2px, 183.0px); }
+      87.5% { transform: translate(674.2px, 205.8px); }
+      93.8% { transform: translate(697.0px, 239.8px); }
+      100.0% { transform: translate(705.0px, 280.0px); }
+    }
+    @keyframes anim-c {
+      0.0% { transform: translate(600.0px, 385.0px); }
+      6.3% { transform: translate(559.8px, 377.0px); }
+      12.5% { transform: translate(525.8px, 354.2px); }
+      18.8% { transform: translate(503.0px, 320.2px); }
+      25.0% { transform: translate(495.0px, 280.0px); }
+      31.3% { transform: translate(503.0px, 239.8px); }
+      37.5% { transform: translate(525.8px, 205.8px); }
+      43.8% { transform: translate(559.8px, 183.0px); }
+      50.0% { transform: translate(600.0px, 175.0px); }
+      56.3% { transform: translate(640.2px, 183.0px); }
+      62.5% { transform: translate(674.2px, 205.8px); }
+      68.8% { transform: translate(697.0px, 239.8px); }
+      75.0% { transform: translate(705.0px, 280.0px); }
+      81.3% { transform: translate(697.0px, 320.2px); }
+      87.5% { transform: translate(674.2px, 354.2px); }
+      93.8% { transform: translate(640.2px, 377.0px); }
+      100.0% { transform: translate(600.0px, 385.0px); }
+    }
+    @keyframes anim-cpp {
+      0.0% { transform: translate(495.0px, 280.0px); }
+      6.3% { transform: translate(503.0px, 239.8px); }
+      12.5% { transform: translate(525.8px, 205.8px); }
+      18.8% { transform: translate(559.8px, 183.0px); }
+      25.0% { transform: translate(600.0px, 175.0px); }
+      31.3% { transform: translate(640.2px, 183.0px); }
+      37.5% { transform: translate(674.2px, 205.8px); }
+      43.8% { transform: translate(697.0px, 239.8px); }
+      50.0% { transform: translate(705.0px, 280.0px); }
+      56.3% { transform: translate(697.0px, 320.2px); }
+      62.5% { transform: translate(674.2px, 354.2px); }
+      68.8% { transform: translate(640.2px, 377.0px); }
+      75.0% { transform: translate(600.0px, 385.0px); }
+      81.3% { transform: translate(559.8px, 377.0px); }
+      87.5% { transform: translate(525.8px, 354.2px); }
+      93.8% { transform: translate(503.0px, 320.2px); }
+      100.0% { transform: translate(495.0px, 280.0px); }
+    }
+    @keyframes anim-ts {
+      0.0% { transform: translate(600.0px, 115.0px); }
+      6.3% { transform: translate(536.9px, 127.6px); }
+      12.5% { transform: translate(483.3px, 163.3px); }
+      18.8% { transform: translate(447.6px, 216.9px); }
+      25.0% { transform: translate(435.0px, 280.0px); }
+      31.3% { transform: translate(447.6px, 343.1px); }
+      37.5% { transform: translate(483.3px, 396.7px); }
+      43.8% { transform: translate(536.9px, 432.4px); }
+      50.0% { transform: translate(600.0px, 445.0px); }
+      56.3% { transform: translate(663.1px, 432.4px); }
+      62.5% { transform: translate(716.7px, 396.7px); }
+      68.8% { transform: translate(752.4px, 343.1px); }
+      75.0% { transform: translate(765.0px, 280.0px); }
+      81.3% { transform: translate(752.4px, 216.9px); }
+      87.5% { transform: translate(716.7px, 163.3px); }
+      93.8% { transform: translate(663.1px, 127.6px); }
+      100.0% { transform: translate(600.0px, 115.0px); }
+    }
+    @keyframes anim-js {
+      0.0% { transform: translate(756.9px, 229.0px); }
+      6.3% { transform: translate(725.5px, 172.8px); }
+      12.5% { transform: translate(674.9px, 133.0px); }
+      18.8% { transform: translate(612.9px, 115.5px); }
+      25.0% { transform: translate(549.0px, 123.1px); }
+      31.3% { transform: translate(492.8px, 154.5px); }
+      37.5% { transform: translate(453.0px, 205.1px); }
+      43.8% { transform: translate(435.5px, 267.1px); }
+      50.0% { transform: translate(443.1px, 331.0px); }
+      56.3% { transform: translate(474.5px, 387.2px); }
+      62.5% { transform: translate(525.1px, 427.0px); }
+      68.8% { transform: translate(587.1px, 444.5px); }
+      75.0% { transform: translate(651.0px, 436.9px); }
+      81.3% { transform: translate(707.2px, 405.5px); }
+      87.5% { transform: translate(747.0px, 354.9px); }
+      93.8% { transform: translate(764.5px, 292.9px); }
+      100.0% { transform: translate(756.9px, 229.0px); }
+    }
+    @keyframes anim-html {
+      0.0% { transform: translate(697.0px, 413.5px); }
+      6.3% { transform: translate(740.7px, 366.2px); }
+      12.5% { transform: translate(763.0px, 305.8px); }
+      18.8% { transform: translate(760.4px, 241.5px); }
+      25.0% { transform: translate(733.5px, 183.0px); }
+      31.3% { transform: translate(686.2px, 139.3px); }
+      37.5% { transform: translate(625.8px, 117.0px); }
+      43.8% { transform: translate(561.5px, 119.6px); }
+      50.0% { transform: translate(503.0px, 146.5px); }
+      56.3% { transform: translate(459.3px, 193.8px); }
+      62.5% { transform: translate(437.0px, 254.2px); }
+      68.8% { transform: translate(439.6px, 318.5px); }
+      75.0% { transform: translate(466.5px, 377.0px); }
+      81.3% { transform: translate(513.8px, 420.7px); }
+      87.5% { transform: translate(574.2px, 443.0px); }
+      93.8% { transform: translate(638.5px, 440.4px); }
+      100.0% { transform: translate(697.0px, 413.5px); }
+    }
+    @keyframes anim-css {
+      0.0% { transform: translate(503.0px, 413.5px); }
+      6.3% { transform: translate(561.5px, 440.4px); }
+      12.5% { transform: translate(625.8px, 443.0px); }
+      18.8% { transform: translate(686.2px, 420.7px); }
+      25.0% { transform: translate(733.5px, 377.0px); }
+      31.3% { transform: translate(760.4px, 318.5px); }
+      37.5% { transform: translate(763.0px, 254.2px); }
+      43.8% { transform: translate(740.7px, 193.8px); }
+      50.0% { transform: translate(697.0px, 146.5px); }
+      56.3% { transform: translate(638.5px, 119.6px); }
+      62.5% { transform: translate(574.2px, 117.0px); }
+      68.8% { transform: translate(513.8px, 139.3px); }
+      75.0% { transform: translate(466.5px, 183.0px); }
+      81.3% { transform: translate(439.6px, 241.5px); }
+      87.5% { transform: translate(437.0px, 305.8px); }
+      93.8% { transform: translate(459.3px, 366.2px); }
+      100.0% { transform: translate(503.0px, 413.5px); }
+    }
+    @keyframes anim-as {
+      0.0% { transform: translate(443.1px, 229.0px); }
+      6.3% { transform: translate(435.5px, 292.9px); }
+      12.5% { transform: translate(453.0px, 354.9px); }
+      18.8% { transform: translate(492.8px, 405.5px); }
+      25.0% { transform: translate(549.0px, 436.9px); }
+      31.3% { transform: translate(612.9px, 444.5px); }
+      37.5% { transform: translate(674.9px, 427.0px); }
+      43.8% { transform: translate(725.5px, 387.2px); }
+      50.0% { transform: translate(756.9px, 331.0px); }
+      56.3% { transform: translate(764.5px, 267.1px); }
+      62.5% { transform: translate(747.0px, 205.1px); }
+      68.8% { transform: translate(707.2px, 154.5px); }
+      75.0% { transform: translate(651.0px, 123.1px); }
+      81.3% { transform: translate(587.1px, 115.5px); }
+      87.5% { transform: translate(525.1px, 133.0px); }
+      93.8% { transform: translate(474.5px, 172.8px); }
+      100.0% { transform: translate(443.1px, 229.0px); }
+    }
+    @keyframes anim-lnx {
+      0.0% { transform: translate(600.0px, 55.0px); }
+      6.3% { transform: translate(686.1px, 72.1px); }
+      12.5% { transform: translate(759.1px, 120.9px); }
+      18.8% { transform: translate(807.9px, 193.9px); }
+      25.0% { transform: translate(825.0px, 280.0px); }
+      31.3% { transform: translate(807.9px, 366.1px); }
+      37.5% { transform: translate(759.1px, 439.1px); }
+      43.8% { transform: translate(686.1px, 487.9px); }
+      50.0% { transform: translate(600.0px, 505.0px); }
+      56.3% { transform: translate(513.9px, 487.9px); }
+      62.5% { transform: translate(440.9px, 439.1px); }
+      68.8% { transform: translate(392.1px, 366.1px); }
+      75.0% { transform: translate(375.0px, 280.0px); }
+      81.3% { transform: translate(392.1px, 193.9px); }
+      87.5% { transform: translate(440.9px, 120.9px); }
+      93.8% { transform: translate(513.9px, 72.1px); }
+      100.0% { transform: translate(600.0px, 55.0px); }
+    }
+    @keyframes anim-bsh {
+      0.0% { transform: translate(794.9px, 167.5px); }
+      6.3% { transform: translate(823.1px, 250.6px); }
+      12.5% { transform: translate(817.3px, 338.2px); }
+      18.8% { transform: translate(778.5px, 417.0px); }
+      25.0% { transform: translate(712.5px, 474.9px); }
+      31.3% { transform: translate(629.4px, 503.1px); }
+      37.5% { transform: translate(541.8px, 497.3px); }
+      43.8% { transform: translate(463.0px, 458.5px); }
+      50.0% { transform: translate(405.1px, 392.5px); }
+      56.3% { transform: translate(376.9px, 309.4px); }
+      62.5% { transform: translate(382.7px, 221.8px); }
+      68.8% { transform: translate(421.5px, 143.0px); }
+      75.0% { transform: translate(487.5px, 85.1px); }
+      81.3% { transform: translate(570.6px, 56.9px); }
+      87.5% { transform: translate(658.2px, 62.7px); }
+      93.8% { transform: translate(737.0px, 101.5px); }
+      100.0% { transform: translate(794.9px, 167.5px); }
+    }
+    @keyframes anim-git {
+      0.0% { transform: translate(794.9px, 392.5px); }
+      6.3% { transform: translate(737.0px, 458.5px); }
+      12.5% { transform: translate(658.2px, 497.3px); }
+      18.8% { transform: translate(570.6px, 503.1px); }
+      25.0% { transform: translate(487.5px, 474.9px); }
+      31.3% { transform: translate(421.5px, 417.0px); }
+      37.5% { transform: translate(382.7px, 338.2px); }
+      43.8% { transform: translate(376.9px, 250.6px); }
+      50.0% { transform: translate(405.1px, 167.5px); }
+      56.3% { transform: translate(463.0px, 101.5px); }
+      62.5% { transform: translate(541.8px, 62.7px); }
+      68.8% { transform: translate(629.4px, 56.9px); }
+      75.0% { transform: translate(712.5px, 85.1px); }
+      81.3% { transform: translate(778.5px, 143.0px); }
+      87.5% { transform: translate(817.3px, 221.8px); }
+      93.8% { transform: translate(823.1px, 309.4px); }
+      100.0% { transform: translate(794.9px, 392.5px); }
+    }
+    @keyframes anim-gh {
+      0.0% { transform: translate(600.0px, 505.0px); }
+      6.3% { transform: translate(513.9px, 487.9px); }
+      12.5% { transform: translate(440.9px, 439.1px); }
+      18.8% { transform: translate(392.1px, 366.1px); }
+      25.0% { transform: translate(375.0px, 280.0px); }
+      31.3% { transform: translate(392.1px, 193.9px); }
+      37.5% { transform: translate(440.9px, 120.9px); }
+      43.8% { transform: translate(513.9px, 72.1px); }
+      50.0% { transform: translate(600.0px, 55.0px); }
+      56.3% { transform: translate(686.1px, 72.1px); }
+      62.5% { transform: translate(759.1px, 120.9px); }
+      68.8% { transform: translate(807.9px, 193.9px); }
+      75.0% { transform: translate(825.0px, 280.0px); }
+      81.3% { transform: translate(807.9px, 366.1px); }
+      87.5% { transform: translate(759.1px, 439.1px); }
+      93.8% { transform: translate(686.1px, 487.9px); }
+      100.0% { transform: translate(600.0px, 505.0px); }
+    }
+    @keyframes anim-skl {
+      0.0% { transform: translate(405.1px, 392.5px); }
+      6.3% { transform: translate(376.9px, 309.4px); }
+      12.5% { transform: translate(382.7px, 221.8px); }
+      18.8% { transform: translate(421.5px, 143.0px); }
+      25.0% { transform: translate(487.5px, 85.1px); }
+      31.3% { transform: translate(570.6px, 56.9px); }
+      37.5% { transform: translate(658.2px, 62.7px); }
+      43.8% { transform: translate(737.0px, 101.5px); }
+      50.0% { transform: translate(794.9px, 167.5px); }
+      56.3% { transform: translate(823.1px, 250.6px); }
+      62.5% { transform: translate(817.3px, 338.2px); }
+      68.8% { transform: translate(778.5px, 417.0px); }
+      75.0% { transform: translate(712.5px, 474.9px); }
+      81.3% { transform: translate(629.4px, 503.1px); }
+      87.5% { transform: translate(541.8px, 497.3px); }
+      93.8% { transform: translate(463.0px, 458.5px); }
+      100.0% { transform: translate(405.1px, 392.5px); }
+    }
+    @keyframes anim-ws {
+      0.0% { transform: translate(405.1px, 167.5px); }
+      6.3% { transform: translate(463.0px, 101.5px); }
+      12.5% { transform: translate(541.8px, 62.7px); }
+      18.8% { transform: translate(629.4px, 56.9px); }
+      25.0% { transform: translate(712.5px, 85.1px); }
+      31.3% { transform: translate(778.5px, 143.0px); }
+      37.5% { transform: translate(817.3px, 221.8px); }
+      43.8% { transform: translate(823.1px, 309.4px); }
+      50.0% { transform: translate(794.9px, 392.5px); }
+      56.3% { transform: translate(737.0px, 458.5px); }
+      62.5% { transform: translate(658.2px, 497.3px); }
+      68.8% { transform: translate(570.6px, 503.1px); }
+      75.0% { transform: translate(487.5px, 474.9px); }
+      81.3% { transform: translate(421.5px, 417.0px); }
+      87.5% { transform: translate(382.7px, 338.2px); }
+      93.8% { transform: translate(376.9px, 250.6px); }
+      100.0% { transform: translate(405.1px, 167.5px); }
     }
 
-    .orbit-ring1 { animation: orbitClockwise 32s linear infinite; transform-origin: 600px 280px; will-change: transform; }
-    .orbit-ring2 { animation: orbitCounterClockwise 44s linear infinite; transform-origin: 600px 280px; will-change: transform; }
-    .orbit-ring3 { animation: orbitClockwise 56s linear infinite; transform-origin: 600px 280px; will-change: transform; }
-
-    /* Counter-rotations to keep orbiting nodes straight and upright */
-    .keep-upright1 {
-      animation: orbitCounterClockwise 32s linear infinite;
-      transform-box: fill-box;
-      transform-origin: center;
-      will-change: transform;
-    }
-    .keep-upright2 {
-      animation: orbitClockwise 44s linear infinite;
-      transform-box: fill-box;
-      transform-origin: center;
-      will-change: transform;
-    }
-    .keep-upright3 {
-      animation: orbitCounterClockwise 56s linear infinite;
-      transform-box: fill-box;
-      transform-origin: center;
-      will-change: transform;
-    }
+    .anim-py { animation: anim-py 32s linear infinite; will-change: transform; }
+    .anim-kt { animation: anim-kt 32s linear infinite; will-change: transform; }
+    .anim-c { animation: anim-c 32s linear infinite; will-change: transform; }
+    .anim-cpp { animation: anim-cpp 32s linear infinite; will-change: transform; }
+    .anim-ts { animation: anim-ts 44s linear infinite; will-change: transform; }
+    .anim-js { animation: anim-js 44s linear infinite; will-change: transform; }
+    .anim-html { animation: anim-html 44s linear infinite; will-change: transform; }
+    .anim-css { animation: anim-css 44s linear infinite; will-change: transform; }
+    .anim-as { animation: anim-as 44s linear infinite; will-change: transform; }
+    .anim-lnx { animation: anim-lnx 56s linear infinite; will-change: transform; }
+    .anim-bsh { animation: anim-bsh 56s linear infinite; will-change: transform; }
+    .anim-git { animation: anim-git 56s linear infinite; will-change: transform; }
+    .anim-gh { animation: anim-gh 56s linear infinite; will-change: transform; }
+    .anim-skl { animation: anim-skl 56s linear infinite; will-change: transform; }
+    .anim-ws { animation: anim-ws 56s linear infinite; will-change: transform; }
 
     @media (prefers-reduced-motion: reduce) {
-      .orbit-ring1, .orbit-ring2, .orbit-ring3,
-      .keep-upright1, .keep-upright2, .keep-upright3 {
+      .anim-py,
+      .anim-kt,
+      .anim-c,
+      .anim-cpp,
+      .anim-ts,
+      .anim-js,
+      .anim-html,
+      .anim-css,
+      .anim-as,
+      .anim-lnx,
+      .anim-bsh,
+      .anim-git,
+      .anim-gh,
+      .anim-skl,
+      .anim-ws {
         animation: none !important;
       }
     }
@@ -102,72 +383,72 @@
   <text x="600" y="284" class="font-mono" font-size="9.5" font-weight="700" fill="#070B14" text-anchor="middle">SHIVA</text>
 
   <!-- ================= RING 1 (Inner, r=105): 4 Core Languages ================= -->
-  <g class="orbit-ring1">
-    <g transform="translate(600, 175)" class="keep-upright1">
+  <g>
+    <g class="anim-py">
       <rect x="-38" y="-14" width="76" height="28" rx="6" class="node-box" stroke="#00F5D4"/>
       <text x="0" y="1" class="font-mono node-text">Python</text>
     </g>
-    <g transform="translate(705, 280)" class="keep-upright1">
+    <g class="anim-kt">
       <rect x="-36" y="-14" width="72" height="28" rx="6" class="node-box" stroke="#8B5CF6"/>
       <text x="0" y="1" class="font-mono node-text">Kotlin</text>
     </g>
-    <g transform="translate(600, 385)" class="keep-upright1">
+    <g class="anim-c">
       <rect x="-26" y="-14" width="52" height="28" rx="6" class="node-box" stroke="#00F5D4"/>
       <text x="0" y="1" class="font-mono node-text">C</text>
     </g>
-    <g transform="translate(495, 280)" class="keep-upright1">
+    <g class="anim-cpp">
       <rect x="-28" y="-14" width="56" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">C++</text>
     </g>
   </g>
 
   <!-- ================= RING 2 (Middle, r=165): 5 Web & Mobile ================= -->
-  <g class="orbit-ring2">
-    <g transform="translate(600, 115)" class="keep-upright2">
+  <g>
+    <g class="anim-ts">
       <rect x="-44" y="-14" width="88" height="28" rx="6" class="node-box" stroke="#38BDF8"/>
       <text x="0" y="1" class="font-mono node-text">TypeScript</text>
     </g>
-    <g transform="translate(757, 229)" class="keep-upright2">
+    <g class="anim-js">
       <rect x="-44" y="-14" width="88" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">JavaScript</text>
     </g>
-    <g transform="translate(697, 413)" class="keep-upright2">
+    <g class="anim-html">
       <rect x="-32" y="-14" width="64" height="28" rx="6" class="node-box" stroke="#EF4444"/>
       <text x="0" y="1" class="font-mono node-text">HTML</text>
     </g>
-    <g transform="translate(503, 413)" class="keep-upright2">
+    <g class="anim-css">
       <rect x="-28" y="-14" width="56" height="28" rx="6" class="node-box" stroke="#38BDF8"/>
       <text x="0" y="1" class="font-mono node-text">CSS</text>
     </g>
-    <g transform="translate(443, 229)" class="keep-upright2">
+    <g class="anim-as">
       <rect x="-56" y="-14" width="112" height="28" rx="6" class="node-box" stroke="#10B981"/>
       <text x="0" y="1" class="font-mono node-text">Android Studio</text>
     </g>
   </g>
 
   <!-- ================= RING 3 (Outer, r=225): 6 Systems & Security Tools ================= -->
-  <g class="orbit-ring3">
-    <g transform="translate(600, 55)" class="keep-upright3">
+  <g>
+    <g class="anim-lnx">
       <rect x="-34" y="-14" width="68" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">Linux</text>
     </g>
-    <g transform="translate(795, 167)" class="keep-upright3">
+    <g class="anim-bsh">
       <rect x="-30" y="-14" width="60" height="28" rx="6" class="node-box" stroke="#10B981"/>
       <text x="0" y="1" class="font-mono node-text">Bash</text>
     </g>
-    <g transform="translate(795, 393)" class="keep-upright3">
+    <g class="anim-git">
       <rect x="-26" y="-14" width="52" height="28" rx="6" class="node-box" stroke="#EF4444"/>
       <text x="0" y="1" class="font-mono node-text">Git</text>
     </g>
-    <g transform="translate(600, 505)" class="keep-upright3">
+    <g class="anim-gh">
       <rect x="-36" y="-14" width="72" height="28" rx="6" class="node-box" stroke="#E6EDF7"/>
       <text x="0" y="1" class="font-mono node-text">GitHub</text>
     </g>
-    <g transform="translate(405, 393)" class="keep-upright3">
+    <g class="anim-skl">
       <rect x="-48" y="-14" width="96" height="28" rx="6" class="node-box" stroke="#FFB547"/>
       <text x="0" y="1" class="font-mono node-text">Scikit-learn</text>
     </g>
-    <g transform="translate(405, 167)" class="keep-upright3">
+    <g class="anim-ws">
       <rect x="-44" y="-14" width="88" height="28" rx="6" class="node-box" stroke="#00F5D4"/>
       <text x="0" y="1" class="font-mono node-text">Wireshark</text>
     </g>

@@ -84,9 +84,8 @@
   <!-- Title with hand-drawn SVG Arrow -->
   <g transform="translate(36, 210)">
     <text x="0" y="0" class="font-sans txt-title">Android Security &amp; Forensics</text>
-    <text x="350" y="-2" class="font-mono" font-size="14" font-weight="700" fill="#FFB547">(On Going)</text>
     <!-- Link Arrow Path -->
-    <g transform="translate(450, -18)">
+    <g transform="translate(420, -18)">
       <path d="M 0,16 L 16,0 M 4,0 L 16,0 L 16,12" class="arrow-pth"/>
     </g>
   </g>
