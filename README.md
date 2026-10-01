@@ -12,59 +12,54 @@
 &nbsp;
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tshivaneshk)
 
-<br/>
-
----
+<br/><br/>
 
 </div>
 
 ## About Me
 
-Cybersecurity Engineer and Android Developer passionate about system-level security, reverse engineering, and building resilient software. 
-
-- Specialized in Android security internals, static/dynamic APK inspection, and network intrusion analysis.
-- Actively expanding into modern Front End Development and Full-Stack architectures.
-- Upstream open-source contributor investigating root causes and patching parsers.
+Cybersecurity Engineer and Android Developer passionate about system-level security, reverse engineering, and building resilient software—specializing in Android security internals, static/dynamic APK inspection, and network intrusion analysis, while actively expanding into modern Front End Development and contributing upstream to open-source security tools.
 
 <br/>
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=tshivaneshk&show_icons=true&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8&icon_color=38bdf8&count_private=true" alt="GitHub Metrics" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tshivaneshk&theme=transparent&hide_border=true&stroke=0000&background=00000000&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" />
+  <img src="https://github-readme-stats.vercel.app/api?username=tshivaneshk&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=38bdf8&icon_color=38bdf8" alt="GitHub Metrics" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tshivaneshk&theme=tokyonight&hide_border=true&background=0D1117&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8" alt="GitHub Streak" />
 </div>
 
 ---
 
-## Selected Work
+## Projects, Contributions & Activity
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>Android Security & Forensics</h3>
+      <h4>Android Security & Forensics</h4>
       <p>Desktop platform interfacing over ADB for deep static analysis, process monitoring, dynamic socket inspection, and automated vulnerability reporting.</p>
-      <p><b>Stack:</b> Python · ADB · Linux / Windows</p>
+      <code>Python</code> · <code>ADB</code> · <code>Linux / Windows</code>
     </td>
     <td width="50%" valign="top">
-      <h3><a href="https://github.com/tshivaneshk/Wolfsniff">Wolfsniff</a></h3>
+      <h4><a href="https://github.com/tshivaneshk/Wolfsniff">Wolfsniff</a></h4>
       <p>Hybrid Network Intrusion Detection System combining high-performance native C packet capture with Random Forest ML models mapped to MITRE ATT&CK.</p>
-      <p><b>Stack:</b> C · Python · Scikit-learn · PCAP</p>
+      <code>C</code> · <code>Python</code> · <code>Scikit-learn</code> · <code>PCAP</code>
     </td>
   </tr>
   <tr>
-    <td colspan="2" valign="top">
-      <h3><a href="https://github.com/tshivaneshk/AlphaStick-Android">AlphaStick-Android</a></h3>
+    <td width="50%" valign="top">
+      <h4><a href="https://github.com/tshivaneshk/AlphaStick-Android">AlphaStick-Android</a></h4>
       <p>Modular Android vulnerability auditing engine with heuristic scanning, explainable risk scoring, and MVVM architecture.</p>
-      <p><b>Stack:</b> Kotlin · Jetpack Compose · Android SDK</p>
+      <code>Kotlin</code> · <code>Jetpack Compose</code> · <code>Android SDK</code>
+    </td>
+    <td width="50%" valign="top">
+      <h4>Upstream Contributions</h4>
+      <p>
+        • <a href="https://github.com/androguard/apk-parser/pull/8"><b>Androguard / apk-parser #8</b></a>: Fixed preview SDK codename crashes in permission loading.<br/>
+        • <a href="https://github.com/OWASP/wstg/pull/1543"><b>OWASP / WSTG #1543</b></a>: Modernized XSSI client testing methodology.
+      </p>
+      <code>Bytecode Inspection</code> · <code>OWASP</code> · <code>PR Merged</code>
     </td>
   </tr>
 </table>
-
----
-
-## Contributions & Activity
-
-- **<a href="https://github.com/androguard/apk-parser/pull/8">Androguard / apk-parser</a> (Merged PR #8)**: Fixed critical APK parsing crashes caused by Android SDK preview codenames in permission loading routines.
-- **<a href="https://github.com/OWASP/wstg/pull/1543">OWASP / Web Security Testing Guide</a> (Merged PR #1543)**: Modernized XSSI client-side testing methodology.
 
 <br/>
 
@@ -83,7 +78,7 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
 <div align="center">
 
 <a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=python,kotlin,c,cpp,ts,js,html,css,androidstudio,linux,bash,git,github&perline=7" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=python,kotlin,c,cpp,ts,js,html,css,androidstudio,linux,bash,git,github&theme=dark&perline=7" alt="Tech Stack" />
 </a>
 
 <br/><br/>
