@@ -1,10 +1,8 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/hero.svg" alt="Mission Control Launch Dashboard - T Shivanesh Kumar" width="100%" />
+# T Shivanesh Kumar
 
-<br/>
-
-<img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/tagline.svg" alt="Terminal Command Telemetry" width="100%" />
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&pause=1200&color=00F5D4&center=true&vCenter=true&width=620&lines=Cybersecurity+Engineer+%26+Android+Developer;Android+Security+Researcher+%26+APK+Reverse+Engineer;Open+Source+Contributor+(Androguard+%26+OWASP);Learning+ML+and+Full+Stack+Systems+in+Public)](https://git.io/typing-svg)
 
 <br/>
 
@@ -22,17 +20,9 @@
 
 <br/><br/>
 
-<img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/divider.svg" alt="Orbital Signal Divider" width="100%" />
+---
 
 </div>
-
-## Flight Deck &amp; Whoami Console
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/terminal.svg" alt="Command Line Console Telemetry" width="100%" />
-</div>
-
-<br/>
 
 ## Mission Dossier &amp; Status Board
 
@@ -79,77 +69,59 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
 
 <br/>
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/divider.svg" alt="Orbital Signal Divider" width="100%" />
-</div>
+---
 
 ## Propulsion Systems &amp; Selected Projects
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/cards-row1.svg" alt="Project Telemetry 01: Android Forensics and Wolfsniff" width="100%" />
-</div>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/cards-row2.svg" alt="Project Telemetry 02: AlphaStick and Upstream Contributions" width="100%" />
-</div>
-
-<br/>
-
-<details>
-  <summary><b>[+] EXPAND MISSION ARCHIVE // PROJECTS DEEP-DIVE</b></summary>
-  <br/>
-
-  <table>
-    <tr>
-      <td width="33%" valign="top">
-        <h4><a href="https://github.com/tshivaneshk">Android Forensics Platform</a></h4>
-        <p>Direct workstation-to-handset forensic auditor over ADB. Pulls package metadata, parses DEX/manifest permissions, inspects live process sockets, and compiles threat vulnerability matrices without ML overhead.</p>
-        <kbd>Python</kbd> <kbd>ADB</kbd> <kbd>Linux</kbd>
-      </td>
-      <td width="33%" valign="top">
-        <h4><a href="https://github.com/tshivaneshk/Wolfsniff">Wolfsniff</a></h4>
-        <p>Hybrid network intrusion detection engine. Pairs high-rate native C socket ingestion with Scikit-learn Random Forest classification trained against the UNSW-NB15 dataset mapped to MITRE ATT&amp;CK tactics.</p>
-        <kbd>C</kbd> <kbd>Python</kbd> <kbd>Scikit-learn</kbd>
-      </td>
-      <td width="33%" valign="top">
-        <h4><a href="https://github.com/tshivaneshk/AlphaStick-Android">AlphaStick-Android</a></h4>
-        <p>Modular vulnerability analyzer targeting Android sandboxes, broadcast receivers, and dynamic code loading. Clean MVVM architecture implemented in Kotlin with Jetpack Compose.</p>
-        <kbd>Kotlin</kbd> <kbd>Jetpack Compose</kbd>
-      </td>
-    </tr>
-  </table>
-</details>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Android Security &amp; Forensics</h3>
+      <p>Desktop platform interfacing over ADB for deep static analysis, process monitoring, dynamic socket inspection, and automated vulnerability reporting.</p>
+      <kbd>Python</kbd> <kbd>ADB</kbd> <kbd>Linux / Windows</kbd>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/tshivaneshk/Wolfsniff">Wolfsniff — Hybrid Network IDS</a></h3>
+      <p>High-throughput Network Intrusion Detection System combining native C packet ingestion with Scikit-learn Random Forest models mapped to MITRE ATT&amp;CK.</p>
+      <kbd>C</kbd> <kbd>Python</kbd> <kbd>Scikit-learn</kbd> <kbd>PCAP</kbd>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/tshivaneshk/AlphaStick-Android">AlphaStick-Android</a></h3>
+      <p>Modular Android vulnerability auditing engine with heuristic scanning, explainable risk scoring, and clean MVVM architecture in Jetpack Compose.</p>
+      <kbd>Kotlin</kbd> <kbd>Jetpack Compose</kbd> <kbd>Android SDK</kbd>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Upstream Core Contributions</h3>
+      <p>
+        • <a href="https://github.com/androguard/apk-parser/pull/8"><b>Androguard / apk-parser #8</b></a>: Resolved preview SDK codename crashes in permission loading.<br/>
+        • <a href="https://github.com/OWASP/wstg/pull/1543"><b>OWASP / WSTG #1543</b></a>: Modernized XSSI client testing methodology.
+      </p>
+      <kbd>Bytecode Analysis</kbd> <kbd>OWASP</kbd> <kbd>PRs Merged</kbd>
+    </td>
+  </tr>
+</table>
 
 <br/>
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/divider.svg" alt="Orbital Signal Divider" width="100%" />
-</div>
+---
 
 ## Planetary Orbit Tech Stack
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/orbit.svg" alt="Animated Multi-Ring Orbit Tech Stack" width="100%" />
+
+<a href="https://skillicons.dev" target="_blank">
+  <img src="https://skillicons.dev/icons?i=python,kotlin,c,cpp,ts,js,html,css,androidstudio,linux,bash,git,github,scikitlearn,wireshark&theme=dark&perline=8" alt="Technology Icons" />
+</a>
+
 </div>
 
 <br/>
 
-<details>
-  <summary><b>[+] FULL CARGO MANIFEST // STATIC ICON REGISTRY</b></summary>
-  <br/>
-
-  <div align="center">
-    <a href="https://skillicons.dev" target="_blank">
-      <img src="https://skillicons.dev/icons?i=python,kotlin,c,cpp,ts,js,html,css,androidstudio,linux,bash,git,github,scikitlearn,wireshark&theme=dark&perline=8" alt="Cargo Manifest Technology Icons" />
-    </a>
-  </div>
-</details>
-
-<br/>
+---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/main/assets/divider.svg" alt="Orbital Signal Divider" width="100%" />
-
   <sub>Mission Telemetry Verified by <strong>T Shivanesh Kumar</strong></sub><br/>
-  <sub>Last Telemetry Sync: <code><!-- TIMESTAMP_START -->2026-10-01 20:50 UTC<!-- TIMESTAMP_END --></code></sub>
+  <sub>Last Telemetry Sync: <code><!-- TIMESTAMP_START -->2026-10-01 21:10 UTC<!-- TIMESTAMP_END --></code></sub>
 </div>
