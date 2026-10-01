@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="100%" height="100%">
+  <defs>
+    <!-- 3D Shadow Filters -->
+    <filter id="shadow3d2" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="0" flood-color="#050811" flood-opacity="0.95"/>
+      <feDropShadow dx="0" dy="14" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+
+    <linearGradient id="cardBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#231a38"/>
+      <stop offset="100%" stop-color="#141026"/>
+    </linearGradient>
+
+    <linearGradient id="cardBg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182728"/>
+      <stop offset="100%" stop-color="#0f191b"/>
+    </linearGradient>
+
+    <linearGradient id="topGlow3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a370f7"/>
+      <stop offset="100%" stop-color="#f72585"/>
+    </linearGradient>
+
+    <linearGradient id="topGlow4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06d6a0"/>
+      <stop offset="100%" stop-color="#118ab2"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .font-title { font-family: "Fredoka", "Comfortaa", "Nunito", -apple-system, sans-serif; font-weight: 800; }
+    .font-body { font-family: "Nunito", "Quicksand", -apple-system, sans-serif; font-weight: 600; }
+    .font-tag { font-family: ui-monospace, monospace; font-weight: 700; }
+
+    @keyframes floatCard3 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(0.4deg); }
+    }
+
+    @keyframes floatCard4 {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(-0.4deg); }
+    }
+
+    @keyframes bounceIcon2 {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-4px) scale(1.1); }
+    }
+
+    .card-3 { animation: floatCard3 4.2s ease-in-out infinite; transform-origin: center; }
+    .card-4 { animation: floatCard4 4.8s ease-in-out infinite; transform-origin: center; }
+    .b-icon2 { animation: bounceIcon2 2.7s ease-in-out infinite; transform-origin: center; }
+  </style>
+
+  <!-- CARD 3: AlphaStick-Android -->
+  <g class="card-3" transform="translate(15, 10)">
+    <rect width="405" height="170" rx="20" fill="url(#cardBg3)" stroke="#a370f7" stroke-width="2.5" filter="url(#shadow3d2)"/>
+    <rect width="405" height="8" rx="4" fill="url(#topGlow3)"/>
+
+    <!-- Fun Icon Badge -->
+    <g transform="translate(24, 22)">
+      <circle cx="20" cy="20" r="18" fill="#a370f7" fill-opacity="0.25" stroke="#a370f7" stroke-width="1.5" class="b-icon2"/>
+      <text x="20" y="27" font-size="18" text-anchor="middle">🛡️</text>
+    </g>
+
+    <!-- Title -->
+    <a href="https://github.com/tshivaneshk/AlphaStick-Android" target="_blank">
+      <text x="75" y="44" class="font-title" font-size="18" fill="#a370f7">AlphaStick-Android ↗</text>
+    </a>
+
+    <!-- Description -->
+    <text x="25" y="82" class="font-body" font-size="13" fill="#cbd5e1">
+      <tspan x="25" dy="0">Modular Android auditing engine packed with heuristic</tspan>
+      <tspan x="25" dy="20">detectors, explainable risk scoring, and a super</tspan>
+      <tspan x="25" dy="20">slick Jetpack Compose UI architecture!</tspan>
+    </text>
+
+    <!-- Playful Pill Tags -->
+    <g transform="translate(25, 134)">
+      <rect width="65" height="24" rx="12" fill="#291a38" stroke="#a370f7" stroke-width="1.2"/>
+      <text x="32.5" y="16" class="font-tag" font-size="11" fill="#a370f7" text-anchor="middle">Kotlin</text>
+
+      <rect x="75" width="135" height="24" rx="12" fill="#291a38" stroke="#f72585" stroke-width="1.2"/>
+      <text x="142.5" y="16" class="font-tag" font-size="11" fill="#f72585" text-anchor="middle">Jetpack Compose</text>
+
+      <rect x="220" width="105" height="24" rx="12" fill="#291a38" stroke="#4cc9f0" stroke-width="1.2"/>
+      <text x="272.5" y="16" class="font-tag" font-size="11" fill="#4cc9f0" text-anchor="middle">Android SDK</text>
+    </g>
+  </g>
+
+  <!-- CARD 4: Open Source Work -->
+  <g class="card-4" transform="translate(455, 10)">
+    <rect width="405" height="170" rx="20" fill="url(#cardBg4)" stroke="#06d6a0" stroke-width="2.5" filter="url(#shadow3d2)"/>
+    <rect width="405" height="8" rx="4" fill="url(#topGlow4)"/>
+
+    <!-- Fun Icon Badge -->
+    <g transform="translate(24, 22)">
+      <circle cx="20" cy="20" r="18" fill="#06d6a0" fill-opacity="0.25" stroke="#06d6a0" stroke-width="1.5" class="b-icon2"/>
+      <text x="20" y="27" font-size="18" text-anchor="middle">🚀</text>
+    </g>
+
+    <!-- Title -->
+    <text x="75" y="44" class="font-title" font-size="19" fill="#06d6a0">Upstream Contributions</text>
+
+    <!-- Description -->
+    <text x="25" y="82" class="font-body" font-size="13" fill="#cbd5e1">
+      <tspan x="25" dy="0">⭐ Androguard / apk-parser #8: Fixed preview codename</tspan>
+      <tspan x="25" dy="20">crashes in permission loading routines!</tspan>
+      <tspan x="25" dy="20">⭐ OWASP / WSTG #1543: Modernized XSSI testing guidance!</tspan>
+    </text>
+
+    <!-- Playful Pill Tags -->
+    <g transform="translate(25, 134)">
+      <rect width="145" height="24" rx="12" fill="#0b2824" stroke="#06d6a0" stroke-width="1.2"/>
+      <text x="72.5" y="16" class="font-tag" font-size="11" fill="#06d6a0" text-anchor="middle">Bytecode Analysis</text>
+
+      <rect x="155" width="85" height="24" rx="12" fill="#0b2824" stroke="#ffd166" stroke-width="1.2"/>
+      <text x="197.5" y="16" class="font-tag" font-size="11" fill="#ffd166" text-anchor="middle">OWASP</text>
+
+      <rect x="250" width="115" height="24" rx="12" fill="#0b2824" stroke="#118ab2" stroke-width="1.2"/>
+      <text x="307.5" y="16" class="font-tag" font-size="11" fill="#118ab2" text-anchor="middle">Merged PRs</text>
+    </g>
+  </g>
+</svg>
