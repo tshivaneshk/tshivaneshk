@@ -26,6 +26,13 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
 - Actively expanding into modern Front End Development and Full-Stack architectures.
 - Upstream open-source contributor investigating root causes and patching parsers.
 
+<br/>
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=tshivaneshk&show_icons=true&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8&icon_color=38bdf8&count_private=true" alt="GitHub Metrics" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tshivaneshk&theme=transparent&hide_border=true&stroke=0000&background=00000000&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" />
+</div>
+
 ---
 
 ## Selected Work
@@ -44,22 +51,17 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td colspan="2" valign="top">
       <h3><a href="https://github.com/tshivaneshk/AlphaStick-Android">AlphaStick-Android</a></h3>
       <p>Modular Android vulnerability auditing engine with heuristic scanning, explainable risk scoring, and MVVM architecture.</p>
       <p><b>Stack:</b> Kotlin · Jetpack Compose · Android SDK</p>
-    </td>
-    <td width="50%" valign="top">
-      <h3><a href="https://github.com/tshivaneshk/ropelog-engine">Ropelog Engine</a></h3>
-      <p>Real-time log ingestion and streaming visualization engine built on a Treap-based Rope data structure with SSE streaming.</p>
-      <p><b>Stack:</b> C++ · SSE · WebSockets · Linux</p>
     </td>
   </tr>
 </table>
 
 ---
 
-## Current Contributions & Activity
+## Contributions & Activity
 
 - **<a href="https://github.com/androguard/apk-parser/pull/8">Androguard / apk-parser</a> (Merged PR #8)**: Fixed critical APK parsing crashes caused by Android SDK preview codenames in permission loading routines.
 - **<a href="https://github.com/OWASP/wstg/pull/1543">OWASP / Web Security Testing Guide</a> (Merged PR #1543)**: Modernized XSSI client-side testing methodology.
@@ -67,18 +69,11 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
 <br/>
 
 <div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg">
-  <img alt="Contribution Snake Animation" src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg" width="100%" />
-</picture>
-
-<br/>
-
-<img src="https://github-readme-stats.vercel.app/api?username=tshivaneshk&show_icons=true&theme=transparent&hide_border=true&title_color=38bdf8&text_color=94a3b8&icon_color=38bdf8&count_private=true" alt="GitHub Metrics" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=tshivaneshk&theme=transparent&hide_border=true&stroke=0000&background=00000000&ring=38bdf8&fire=38bdf8&currStreakLabel=38bdf8&sideLabels=94a3b8&dates=64748b" alt="GitHub Streak" />
-
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg">
+    <img alt="Contribution Snake Animation" src="https://raw.githubusercontent.com/tshivaneshk/tshivaneshk/output/github-contribution-grid-snake.svg" width="100%" />
+  </picture>
 </div>
 
 ---
@@ -88,29 +83,14 @@ Cybersecurity Engineer and Android Developer passionate about system-level secur
 <div align="center">
 
 <a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=python,kotlin,c,cpp,java,rust,ts,js,html,css&perline=10" alt="Languages" />
+  <img src="https://skillicons.dev/icons?i=python,kotlin,c,cpp,ts,js,html,css,androidstudio,linux,bash,git,github&perline=7" alt="Tech Stack" />
 </a>
 
 <br/><br/>
 
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=androidstudio,flutter,react,nextjs,tailwind,fastapi,nodejs,postgres&perline=10" alt="Frameworks & Tools" />
-</a>
-
-<br/><br/>
-
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=linux,bash,git,github,githubactions,docker,vscode&perline=10" alt="Systems & DevOps" />
-</a>
-
-<br/><br/>
-
-![Ghidra](https://img.shields.io/badge/Ghidra-000000?style=for-the-badge&logo=shield&logoColor=38bdf8)
-![Frida](https://img.shields.io/badge/Frida-20232A?style=for-the-badge&logo=target&logoColor=38bdf8)
-![JADX](https://img.shields.io/badge/JADX-1e293b?style=for-the-badge&logo=android&logoColor=38bdf8)
-![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=portswigger&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
 ![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Androguard](https://img.shields.io/badge/Androguard-0284C7?style=for-the-badge&logo=android&logoColor=white)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
 
 </div>
 
