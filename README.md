@@ -78,7 +78,7 @@
 
 <div align="center">
 
-<a href="https://portfolio-rho-sooty-uwjqzmzrhi.vercel.app/" target="_blank">
+<a href="https://tshivaneshk-portfolio.vercel.app/" target="_blank">
   <img src="https://img.shields.io/badge/PORTFOLIO-111A2E?style=for-the-badge&logo=vercel&logoColor=00F5D4" alt="Portfolio link" />
 </a>
 &nbsp;
